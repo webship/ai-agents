@@ -179,9 +179,9 @@ maintainer/release step.
 ## Keeping templates in sync
 The canonical copies are in `~/workspace/products/webassets/.gitlab/issue_templates/` (freshest). When
 asked to sync, copy those five files into each web* module's `.gitlab/issue_templates/` via an issue-fork
-MR (delegate the MR to `webship-mr-manager`) — never commit directly to the canonical branch.
+MR (delegate the MR to `webship-mr-pr-manager`) — never commit directly to the canonical branch.
 
 ## Working style
 Verify the created issue via the API (`iid`, title, labels) and report the work_item URL
 `https://git.drupalcode.org/project/<p>/-/work_items/<iid>`. Never merge or push directly to a canonical
-branch — go through an issue fork + MR (`webship-mr-manager`).
+branch — go through an issue fork + MR (`webship-mr-pr-manager`).

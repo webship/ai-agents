@@ -153,9 +153,9 @@ Append this checklist to every MR/PR description, ticking only what is actually 
 
 ---
 
-## PATCH TITLE + SHARED-FILE / MULTI-VERSION RULES (webship/webship-patches & webship/drupal-core-patches)
+## PATCH TITLE + SHARED-FILE / MULTI-VERSION RULES (webship/patches & webship/drupal-patches)
 
-Two hard rules (Rajab, 2026-07-04) for every patch PR/issue in **webship/webship-patches** and **webship/drupal-core-patches**:
+Two hard rules (Rajab, 2026-07-04) for every patch PR/issue in **webship/patches** and **webship/drupal-patches**:
 
 ### 1. The title carries the FULL Drupal.org issue title — verbatim, no duplication
 Copy the upstream drupal.org issue's exact title into the patch PR/issue title. Do not paraphrase it, do not replace it with the MR commit-type summary, and do not embed a `fix:` / `task:` prefix.
@@ -174,8 +174,8 @@ When a patch applies to a module at a version that more than one Webship release
 
 1. Add the materialised `.patch` file **once**, on the `patches` file-store branch. Never commit a per-line duplicate of the same patch file.
 2. First determine which Webship version branches actually require that module at that version (check each line's composer.json / the module's release used per Webship branch).
-3. Open ONE PR (or a tightly-coordinated set) that wires the **same** `extra.patches.[package]` entry — pointing at the single shared raw file URL — into composer.json on **every** Webship version branch that uses it (10.1.x, 11.0.x, 9.2.x, … as applicable). Cover all used versions in the same effort; don't leave a line missing the patch.
-4. drupal-core-patches: analogous — one materialised core `.patch` on its `patches`/file-store branch, referenced from each core-minor branch that needs it (e.g. 11.4.x), never duplicated.
+3. Open ONE PR (or a tightly-coordinated set) that wires the **same** `extra.patches.[package]` entry — pointing at the single shared raw file URL — into composer.json on **every** active version branch that uses it (currently only `11.0.x` in `webship/patches`). Cover all used versions in the same effort; don't leave a line missing the patch.
+4. webship/drupal-patches: analogous — one materialised core `.patch` on its `patches`/file-store branch, referenced from each core-minor branch that needs it (e.g. 11.4.x), never duplicated.
 
 Worked precedent: eca_helper #3608313 — patch file `eca_helper--2026-07-04--3608313--mr-16.patch` added once (PR #452 on `patches`), then wired into composer.json on 10.1.x (#453) and 11.0.x (#454) referencing that single file.
 
@@ -189,13 +189,14 @@ Worked precedent: eca_helper #3608313 — patch file `eca_helper--2026-07-04--36
 
 This agent is paired with a **skill** of the same name (`.claude/skills/<this-agent>/SKILL.md`) — the reusable, model-invoked how-to for the same conventions. Load the skill directly when you only need the reference (commands, house style, gotchas) without spawning the whole agent.
 
-The three related agents/skills in this family are aware of each other; use the right one for the job:
+The related agents/skills in this family are aware of each other; use the right one for the job:
 
 - **webship-mr-pr-manager** — the MR/PR lifecycle gateway (GitHub PRs + git.drupalcode.org MRs; description shape, Checkpoints last, commit-type titles, honest checkbox flips). Skill: `.claude/skills/webship-mr-pr-manager/SKILL.md`; agent: `webship-mr-pr-manager`. Delegate any "open/update the MR or PR" step here.
-- **webship-patches** — the `webship/webship-patches` Composer plugin + curated contrib patches (allowlist, wildcard ignore, `patches-ignore`, web-ccup). Skill: `.claude/skills/webship-patches/SKILL.md`; agent: `webship-patches`.
-- **drupal-core-patches** — the `webship/drupal-core-patches` metapackage, one branch per Drupal core major.minor. Skill: `.claude/skills/drupal-core-patches/SKILL.md`; agent: `drupal-core-patches`.
+- **webship-patches** — the `webship/patches` Composer plugin + curated contrib patches (allowlist, wildcard ignore, `patches-ignore`). Skill: `.claude/skills/webship-patches/SKILL.md`; agent: `webship-patches`.
+- **webship-drupal-patches** — the `webship/drupal-patches` metapackage, one branch per Drupal core major.minor. Skill: `.claude/skills/webship-drupal-patches/SKILL.md`; agent: `webship-drupal-patches`.
+- **webship-patches-release** / **webship-drupal-patches-release** — the release agents for those two packages.
 
-Templates come from the **webship-issue-templates** skill; route issue creation to the `drupal-issue-manager` / `github-issue-manager` agents. Shared rules everywhere: drupal.org commit-type titles (<https://www.drupal.org/node/3586390>), the Checkpoints checklist ending every MR/PR, **"Reviewed by a human"** before **"Code review by maintainers"** (both AI-never-tick), one-issue-one-PR, always link the issue + the MR/PR, and (patches) 4-segment never-move release tags.
+Templates come from the **webship-issue-templates** skill; route issue creation to the `drupal-issue-manager` / `github-issue-manager` agents. Shared rules everywhere: drupal.org commit-type titles (<https://www.drupal.org/node/3586390>), the Checkpoints checklist ending every MR/PR, **"Reviewed by a human"** before **"Code review by maintainers"** (both AI-never-tick), one-issue-one-PR, always link the issue + the MR/PR, and (patches) never-move release tags (semver within the minor).
 
 ## Local checkouts
 
@@ -203,8 +204,8 @@ Every repository this agent works in lives under `~/workspace/`:
 
 | Repository | Local clone |
 | --- | --- |
-| `webship/webship-patches` | `~/workspace/products/webship-patches` |
-| `webship/drupal-core-patches` | `~/workspace/products/drupal-core-patches` |
+| `webship/patches` | `~/workspace/products/patches` |
+| `webship/drupal-patches` | `~/workspace/products/drupal-patches` |
 | `drupal/webpatches` | `~/workspace/products/webpatches` |
 | Webship test sites (DDEV) | `~/workspace/test/<project>` |
 | Webship dev sites (DDEV) | `~/workspace/dev/<project>` |

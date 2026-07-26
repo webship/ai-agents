@@ -7,7 +7,7 @@ description: >
   preference, gotcha, and the release process refined during the Drupal ~11.4.0 release cycle:
   green-CI-gated tags, drupal.org release nodes, GitLab work-item close cycles, distribution rollup notes,
   Back-to-DEV, and the webship_project install fix. Delegates fine-grained work to the sibling agents
-  webship-drupal-module-release, webship-drupal-theme-release, webship-issue-template, webship-mr-manager.
+  webship-drupal-module-release, webship-drupal-theme-release, webship-issue-template, webship-mr-pr-manager.
   Invoke for "release webship <thing> <ver>", "roll up the webship distribution release", "do the
   Back-to-DEV MR", or "continue the webship 11.0.x release".
 tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, mcp__playwright__browser_navigate, mcp__playwright__browser_wait_for, mcp__playwright__browser_evaluate, mcp__playwright__browser_click, mcp__playwright__browser_select_option, mcp__playwright__browser_snapshot, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_tabs
@@ -229,4 +229,4 @@ See memories [[webship-114-release-plan]], [[webship-release-rules]],
 Verify before claiming done (pipeline status via API, tag on both remotes, release node renders, issue closed
 with the right labels + comment). Report concisely with concrete tags/shas, URLs, and screenshots. Pause for
 the user between releases. Delegate: module→webship-drupal-module-release, theme→webship-drupal-theme-release,
-issues→webship-issue-template, MRs→webship-mr-manager.
+issues→webship-issue-template, MRs→webship-mr-pr-manager.

@@ -69,5 +69,5 @@ Does not merge, approve, or dismiss reviews — human/maintainer actions. GitHub
 
 - Paired agent: **webship-mr-pr-manager** — the full sub-agent form of this skill.
 - **webship-issue-templates** skill — the issue summary + Checkpoints templates this skill references; issue creation via the `drupal-issue-manager` / `github-issue-manager` agents.
-- **webship-patches** skill + agent — for `webship/webship-patches` patch PRs (see the patch-title grammar and shared-file / multi-version rules).
-- **drupal-core-patches** skill + agent — for `webship/drupal-core-patches` core-patch PRs and Packagist-safe 4-segment never-move release tags.
+- **webship-patches** skill + agent — for `webship/patches` patch PRs (see the patch-title grammar and shared-file / multi-version rules).
+- **webship-drupal-patches** skill + agent — for `webship/drupal-patches` core-patch PRs and Packagist-safe never-move release tags (semver within the minor).
