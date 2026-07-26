@@ -165,8 +165,8 @@ Append this checklist to every MR/PR description, ticking only what is actually 
 This agent owns drupal.org issue and issue-fork bookkeeping. Defer the rest to the sibling skills/agents (which are aware of it in turn):
 
 - **webship-mr-pr-manager** (skill `.claude/skills/webship-mr-pr-manager/SKILL.md`; agent `webship-mr-pr-manager`) — the MR/PR lifecycle gateway across GitHub + GitLab / git.drupalcode.org. Create the issue here first, then hand any "open/update the MR or PR" step to it.
-- **webship-patches** (skill `.claude/skills/webship-patches/SKILL.md`; agent `webship-patches`) — the `webship/webship-patches` Composer plugin + curated contrib patches.
-- **drupal-core-patches** (skill `.claude/skills/drupal-core-patches/SKILL.md`; agent `drupal-core-patches`) — the `webship/drupal-core-patches` metapackage, one branch per Drupal core major.minor.
+- **webship-patches** (skill `.claude/skills/webship-patches/SKILL.md`; agent `webship-patches`) — the `webship/patches` Composer plugin + curated contrib patches.
+- **webship-drupal-patches** (skill `.claude/skills/webship-drupal-patches/SKILL.md`; agent `webship-drupal-patches`) — the `webship/drupal-patches` metapackage, one branch per Drupal core major.minor.
 
 Issue + MR/PR templates come from the **webship-issue-templates** skill. Keep **"Reviewed by a human"** and **"Code review by maintainers"** AI-never-ticked; always link both the issue and the MR/PR.
 
@@ -176,8 +176,8 @@ Every repository this agent works in lives under `~/workspace/`:
 
 | Repository | Local clone |
 | --- | --- |
-| `webship/webship-patches` | `~/workspace/products/webship-patches` |
-| `webship/drupal-core-patches` | `~/workspace/products/drupal-core-patches` |
+| `webship/patches` | `~/workspace/products/patches` |
+| `webship/drupal-patches` | `~/workspace/products/drupal-patches` |
 | `drupal/webpatches` | `~/workspace/products/webpatches` |
 | Webship test sites (DDEV) | `~/workspace/test/<project>` |
 | Webship dev sites (DDEV) | `~/workspace/dev/<project>` |

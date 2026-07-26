@@ -85,16 +85,14 @@ git add .
 git diff HEAD > ../../../patches/module--$(date +%Y-%m-%d)--issue-reroll.patch
 ```
 
-### Composer commands for patch cleanup
+### No Composer cleanup commands (dropped in the rename)
 
-`webship/webship-patches` registers Composer-native commands (these replace the older Drush commands previously shipped in `webship_core`):
+The predecessor `webship/webship-patches` (now renamed `webship/patches`) shipped Composer-native
+commands rewriting MR URLs in `composer.json` to local timestamped files. `webship/patches` dropped
+them — materialize an MR diff into a static file manually instead:
 
 ```bash
-# Rewrite MR URLs in root composer.json to local timestamped files under ./patches/
-composer webship-patches:cleanup:patches      # alias: composer web-ccup
-
-# Same operation, applied to the JSON file referenced by extra.patches-file
-composer webship-patches:cleanup:patches-file # alias: composer web-ccupf
+curl -sL "<mr-url>.diff" -o "patches/<pkg>--$(date +%Y-%m-%d)--<issue>--mr-<n>.patch"
 ```
 
 ### Patch Storage Best Practices

@@ -1,16 +1,16 @@
 ---
 name: webship-patches
-description: Apply and manage patches using cweagans/composer-patches (v1 / v2) for Drupal projects, and use the webship/webship-patches Composer plugin's allowlist, wildcard ignore, and patches-ignore extensions on top of v2. Use when applying patches to Drupal core or contrib, configuring composer.json patch blocks, handling patch failures, or integrating with Webship patches.
+description: Apply and manage patches using cweagans/composer-patches (v2) for Drupal projects, and use the webship/patches Composer plugin's allowlist, wildcard ignore, and patches-ignore extensions on top of v2. Use when applying patches to Drupal core or contrib, configuring composer.json patch blocks, handling patch failures, or integrating with Webship patches.
 ---
 
 # Composer Patches
 
-Apply and manage patches using `cweagans/composer-patches` for Drupal projects. Covers v1, v2, and the `webship/webship-patches` plugin that wraps v2 with extra controls.
+Apply and manage patches using `cweagans/composer-patches` for Drupal projects. Covers v2 and the `webship/patches` plugin that wraps it with extra controls.
 
 ## Prerequisites
 
 - Composer 2.x.
-- `cweagans/composer-patches: ~1.7.0 || ~2.0`, declared in `require` and allowed in `config.allow-plugins`.
+- `cweagans/composer-patches: ~2.0`, declared in `require` and allowed in `config.allow-plugins`.
 
 ## Enable patching
 
@@ -109,9 +109,9 @@ Upstream v2 only matches by exact package name.
 }
 ```
 
-## Extra controls from `webship/webship-patches`
+## Extra controls from `webship/patches`
 
-`webship/webship-patches` is a Composer plugin (`type: composer-plugin`) layered on top of v2. It restores v1-style behaviors and adds wildcards.
+`webship/patches` (renamed from the predecessor `webship/webship-patches`) is a Composer plugin (`type: composer-plugin`) layered on top of v2. It restores v1-style behaviors and adds wildcards.
 
 ### `allowed-dependency-patches` (allowlist, default-deny)
 
@@ -119,13 +119,13 @@ Upstream v2 only matches by exact package name.
 {
   "extra": {
     "composer-patches": {
-      "allowed-dependency-patches": ["webship/webship-patches"]
+      "allowed-dependency-patches": ["webship/patches", "webship/drupal-patches"]
     }
   }
 }
 ```
 
-Only listed packages may contribute dependency-declared patches. Default: `["webship/webship-patches"]`. Net effect: only Webship-curated patches and your project's own `extra.patches` apply — stale third-party `.patch` URLs in unrelated contrib modules are skipped.
+Only listed packages may contribute dependency-declared patches. Default: `["webship/patches", "webship/drupal-patches"]` (constant `Webship\Patches\Plugin\PatchesPlugin::DEFAULT_ALLOWED_DEPENDENCY_PATCHES`). Net effect: only Webship-curated patches and your project's own `extra.patches` apply — stale third-party `.patch` URLs in unrelated contrib modules are skipped.
 
 ### Wildcard `ignore-dependency-patches`
 
@@ -149,7 +149,7 @@ Exclude one specific patch URL declared by a given dependency:
 {
   "extra": {
     "patches-ignore": {
-      "webship/webship-patches": {
+      "webship/patches": {
         "drupal/core": {
           "Issue description": "https://patch-url.patch"
         }
@@ -161,16 +161,16 @@ Exclude one specific patch URL declared by a given dependency:
 
 Schema: `{ "<source-pkg>": { "<target-pkg>": { "<description>": "<url>" } } }`. Matching is done by URL — the description string is informational. A flat array of URLs (`{ "<source-pkg>": { "<target-pkg>": ["<url>", ...] } }`) is also accepted.
 
-## Plugin Composer commands
+## No plugin Composer commands (dropped in the rename)
 
-Provided by `webship/webship-patches`. They replace the older Drush commands previously shipped in `webship_core`.
+The predecessor `webship/webship-patches` shipped `webship-patches:cleanup:patches` (`web-ccup`) and
+`webship-patches:cleanup:patches-file` (`web-ccupf`) Composer commands that rewrote remote MR URLs in
+`composer.json` to local timestamped files. **`webship/patches` dropped both** — materialize an MR diff
+manually instead:
 
 ```bash
-# Rewrite remote MR URLs in root composer.json to local timestamped files under ./patches/
-composer webship-patches:cleanup:patches      # alias: composer web-ccup
-
-# Same, but for the JSON file referenced by extra.patches-file
-composer webship-patches:cleanup:patches-file # alias: composer web-ccupf
+curl -sL "<mr-url>.diff" -o "patches/<pkg>--$(date +%Y-%m-%d)--<issue>--mr-<n>.patch"
+head -1 "patches/<file>.patch"   # must be "diff --git", not "<!DOCTYPE html>"
 ```
 
 ## Examples
@@ -210,13 +210,15 @@ git apply --check patches/<file>.patch
 
 ## Handling patch failures
 
-- **Already applied** (upstream merged the fix): remove from `extra.patches`, or — for a patch declared by `webship/webship-patches` — add to `patches-ignore`.
+- **Already applied** (upstream merged the fix): remove from `extra.patches`, or — for a patch declared by `webship/patches` — add to `patches-ignore`.
 - **Patch conflicts**: re-roll against the new module version, rename the file with a fresh `YYYY-MM-DD`, update the entry in `extra.patches`.
-- **Stale third-party URL aborts install**: rely on the default allowlist (`["webship/webship-patches"]`) or add a wildcard `ignore-dependency-patches` (e.g. `drupal/*`).
-- **`Failed to open stream` on fresh `composer create-project`**: a downstream plugin set `extra.plugin-modifies-downloads` or `extra.plugin-modifies-install-path` and got promoted to early activation before `drupal/core` was extracted. Drop those flags — `webship/webship-patches` uses late activation (POST_PACKAGE_INSTALL of itself) on purpose.
+- **Stale third-party URL aborts install**: rely on the default allowlist (`["webship/patches", "webship/drupal-patches"]`) or add a wildcard `ignore-dependency-patches` (e.g. `drupal/*`).
+- **`Failed to open stream` on fresh `composer create-project`**: a downstream plugin set `extra.plugin-modifies-downloads` or `extra.plugin-modifies-install-path` and got promoted to early activation before `drupal/core` was extracted. Drop those flags — `webship/patches` uses late activation (POST_PACKAGE_INSTALL of itself) on purpose.
 
 ## See also
 
-- Agent: `webship-patches` — end-to-end Webship patches workflows by version.
-- [Webship Patches repo](https://github.com/webship/webship-patches)
+- Agent: `webship-patches` — end-to-end Webship patches workflows for the supported line.
+- Agent: `webship-patches-release` — cutting and publishing `webship/patches` releases.
+- Skill: `webship-drupal-patches` — the sibling Drupal-core-patches metapackage.
+- [Webship Patches repo](https://github.com/webship/patches)
 - [cweagans/composer-patches](https://github.com/cweagans/composer-patches)
