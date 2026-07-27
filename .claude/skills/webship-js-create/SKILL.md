@@ -1,6 +1,6 @@
 ---
 name: webship-js-create
-description: Author webship-js BDD `.feature` tests for a page or behaviour. Use when the user asks to "write tests for /<path>", "add scenarios for the login page", "test the contact form", "cover the checkout flow", "create a feature file", or names a route to test. Generates desktop + mobile scenarios with web-first assertions, registers named selectors, handles AJAX timing via BBR auto-settle, and writes Varbase-style numbered file names for CMS suites.
+description: Author webship-js BDD `.feature` tests for a page or behaviour. Use when the user asks to "write tests for /<path>", "add scenarios for the login page", "test the contact form", "cover the checkout flow", "create a feature file", or names a route to test. Generates desktop + mobile scenarios with web-first assertions, registers named selectors, handles AJAX timing via BBR auto-settle, and writes numbered file names for CMS suites.
 argument-hint: '[page-path]'
 arguments: page
 paths: tests/features/**/*.feature
@@ -135,7 +135,7 @@ tests/features/login--links.feature
 tests/features/login--a11y.feature
 ```
 
-**B — numbered (CMS / multi-section suites — Varbase style)**:
+**B — numbered (CMS / multi-section suites)**:
 
 ```
 tests/features/
@@ -153,8 +153,7 @@ tests/features/
 ```
 
 Two-digit section / two-digit feature. Predictable CI order; easy log
-search. We learned this from experimenting on Varbase and
-Varbase-project.
+search. This pattern comes from large multi-role CMS suites.
 
 ### Phase 4 — tag for CI lanes
 
@@ -173,7 +172,7 @@ Varbase-project.
 | `@auth-setup`                             | One-shot; produces auth state JSON.              |
 | `@video` / `@no-video`                    | Recording toggle when `video.mode = 'tag'`.      |
 | `@js-fail` / `@js-warn` / `@js-off`       | Per-scenario JS-error mode.                      |
-| `@local` `@development` `@staging` `@production` | Environment lanes (Varbase stack).        |
+| `@local` `@development` `@staging` `@production` | Environment lanes.        |
 
 ### Phase 5 — write scenarios
 
@@ -285,7 +284,7 @@ Scenario: Session warning fires after 25 minutes
   Then ".session-warning" should be visible within 2 seconds
 ```
 
-### Example — Varbase CMS content workflow
+### Example — CMS content workflow
 
 ```gherkin
 @javascript @local @development @staging @production
@@ -312,7 +311,7 @@ Feature: Content Publishing Workflow
 `Given I am a logged in user with the "<role>" user` reads
 `worldParameters.users[<role>]` (set up in `/webship-js-init`). One
 custom step replaces dozens of repeated login scenes — pattern from
-Varbase / Varbase-project.
+multi-role CMS suites.
 
 ### Example — auth state restore (no repeat logins)
 
@@ -427,7 +426,7 @@ World object: `this.page`, `this.context`, `this.playwrightBrowser`,
 `this.launchUrl`, `this.minWaitTime`, `this.assetsFolder`,
 `this.parameters` (full `worldParameters`).
 
-Pattern from Varbase — multi-role auth helper:
+Multi-role auth helper pattern:
 
 ```js
 Given(/^I am a logged in user with( the)*( username)* "([^"]*)?"( user)*$/, async function (_, __, username) {
@@ -442,6 +441,6 @@ Given(/^I am a logged in user with( the)*( username)* "([^"]*)?"( user)*$/, asyn
 });
 ```
 
-We learned a lot by experimenting and working on Varbase — that step
+On multi-role CMS suites that step
 collapses dozens of repeated login scenes into one helper plus a JSON
 registry.

@@ -529,10 +529,9 @@ Then print current URL
 Then print last response
 ```
 
-## Varbase / multi-role custom steps to know
+## Multi-role CMS custom steps to know
 
-We learned a lot by experimenting and working on Varbase /
-Varbase-project. The custom steps that paid off:
+The custom steps that pay off on multi-role CMS suites:
 
 ```gherkin
 # Reads worldParameters.users[<role>]:

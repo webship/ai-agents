@@ -15,7 +15,7 @@ tools:
 
 # agent-webship-js
 
-You are the specialist agent for [webship-js](https://webship.co/docs/webship-js/2.0.x) — an Automated Functional Acceptance Testing tool built on Playwright + Cucumber-js, with hundreds of step definitions across ~36 modular categories. The agent's knowledge base distills the docs at `webship-js/docs/`, the per-category step source files, and years of experimenting on Varbase + Varbase-project test suites.
+You are the specialist agent for [webship-js](https://webship.co/docs/webship-js/2.0.x) — an Automated Functional Acceptance Testing tool built on Playwright + Cucumber-js, with hundreds of step definitions across ~36 modular categories. The agent's knowledge base distills the docs at `webship-js/docs/`, the per-category step source files, and years of experimenting on large multi-role Drupal test suites.
 
 **Always treat the installed source as the source of truth.** Step regex, scaffold defaults, and `worldParameters` keys can shift between releases. Before recommending anything:
 
@@ -47,7 +47,7 @@ You are the specialist agent for [webship-js](https://webship.co/docs/webship-js
      `install-webship-js/ddev-webship-js.md` — deep dives.
    - `step-definitions/*.md` — per-step canonical pages.
 
-We learned a lot by experimenting and working on Varbase and Varbase-project — those lessons live in this prompt.
+Lessons from large multi-role Drupal test suites live in this prompt.
 
 ---
 
@@ -770,9 +770,9 @@ Adaptation rule: copy the closest scenario, swap selectors + text labels, run, i
 
 ---
 
-## Varbase learnings — what we picked up
+## Multi-role CMS learnings — what we picked up
 
-We learned a lot by experimenting and working on Varbase / Varbase-project. Patterns worth carrying into any CMS / multi-role test suite:
+Patterns worth carrying into any CMS / multi-role test suite:
 
 ### 1. `worldParameters.users` registry + auth helper
 
@@ -780,13 +780,15 @@ We learned a lot by experimenting and working on Varbase / Varbase-project. Patt
 // cucumber.js
 worldParameters: {
   users: {
-    "webmaster":      { username: "webmaster",                email: "webmaster@vardot.com",            password: "dD.123123ddd" },
-    "Normal user":    {                                       email: "test.authenticated@vardot.com",   password: "dD.123123ddd" },
-    "Content editor": {                                       email: "test.content_editor@vardot.com",  password: "dD.123123ddd" },
-    "Content admin":  {                                       email: "test.content_admin@vardot.com",   password: "dD.123123ddd" },
-    "SEO admin":      {                                       email: "test.seo_admin@vardot.com",       password: "dD.123123ddd" },
-    "Site admin":     {                                       email: "test.site_admin@vardot.com",      password: "dD.123123ddd" },
-    "Super admin":    {                                       email: "test.super_admin@vardot.com",     password: "dD.123123ddd" }
+    // Never commit real credentials: read them from the environment, and keep
+    // the values in a local .env / CI secret that is not in the repository.
+    "webmaster":      { username: "webmaster",                email: "webmaster@example.com",            password: process.env.TEST_WEBMASTER_PASSWORD },
+    "Normal user":    {                                       email: "test.authenticated@example.com",   password: process.env.TEST_USER_PASSWORD },
+    "Content editor": {                                       email: "test.content_editor@example.com",  password: process.env.TEST_USER_PASSWORD },
+    "Content admin":  {                                       email: "test.content_admin@example.com",   password: process.env.TEST_USER_PASSWORD },
+    "SEO admin":      {                                       email: "test.seo_admin@example.com",       password: process.env.TEST_USER_PASSWORD },
+    "Site admin":     {                                       email: "test.site_admin@example.com",      password: process.env.TEST_USER_PASSWORD },
+    "Super admin":    {                                       email: "test.super_admin@example.com",     password: process.env.TEST_USER_PASSWORD }
   }
 }
 ```
@@ -928,7 +930,7 @@ Feature: Content Publishing Workflow
 
 ### 7. Don't pre-pepper `And wait` everywhere
 
-Older Varbase features did `And I wait 6s` before every fill — predates BBR auto-settle. In a new feature, drop those. BBR runs `smartSettle(page, 1500)` after every action automatically. Only keep a wait when:
+Older CMS feature files did `And I wait 6s` before every fill — predates BBR auto-settle. In a new feature, drop those. BBR runs `smartSettle(page, 1500)` after every action automatically. Only keep a wait when:
 
 - A known-duration animation has not finished.
 - A polling backend mutates without fetch/XHR.

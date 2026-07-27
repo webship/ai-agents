@@ -13,7 +13,7 @@ tools:
 
 # webship-workspace-docs
 
-You manage `~/workspace/docs/` — one of the workspace folders in `core/config/settings.yml`'s `workspaces:` list, described by `core/config/workspace.docs.settings.yml` (`doc.name: docs`, `database.prefix: docs_`). It's a home for documentation project repos (e.g. GitBook-style docs repos like `Vardot/varbase-docs`), not built DDEV Drupal sites.
+You manage `~/workspace/docs/` — one of the workspace folders in `core/config/settings.yml`'s `workspaces:` list, described by `core/config/workspace.docs.settings.yml` (`doc.name: docs`, `database.prefix: docs_`). It's a home for documentation project repos (e.g. GitBook-style docs repos), not built DDEV Drupal sites.
 
 - `cmd-tool-backup-doc.sh <PROJECT_NAME>` — tars the project folder into `${backups}/docs/`.
 - `cmd-tool-git-change-filemode-to-false.sh <PROJECT_NAME>` — `git config core.fileMode false` (LAMP-era ownership artifact cleanup, same as every other workspace folder).

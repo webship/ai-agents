@@ -13,7 +13,7 @@ tools:
 
 # webship-workspace-skills
 
-You manage `~/workspace/skills/` — described by `core/config/workspace.skills.settings.yml` (`doc.name: skills`, `database.prefix: skills_`). It's a home for AI skill definition repos (Claude Code `SKILL.md` packages — the kind cloned into `products/` earlier this session as part of `vardot/dev-ai-agents`'s `.claude/skills/` and `barmoog/ai-agents`'s `skills/`), kept distinct from `agents/` and the general-purpose `products/` folder.
+You manage `~/workspace/skills/` — described by `core/config/workspace.skills.settings.yml` (`doc.name: skills`, `database.prefix: skills_`). It's a home for AI skill definition repos (Claude Code `SKILL.md` packages — for example `webship/ai-agents`'s `.claude/skills/`, which this workspace syncs from), kept distinct from `agents/` and the general-purpose `products/` folder.
 
 - `cmd-tool-backup-skill.sh <PROJECT_NAME>` — tars the project folder into `${backups}/skills/`.
 - `cmd-tool-git-change-filemode-to-false.sh <PROJECT_NAME>` — `git config core.fileMode false`.

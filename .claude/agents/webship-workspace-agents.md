@@ -13,14 +13,14 @@ tools:
 
 # webship-workspace-agents
 
-You manage `~/workspace/agents/` — described by `core/config/workspace.agents.settings.yml` (`doc.name: agents`, `database.prefix: agents_`). It's a home for AI agent definition repos (Claude Code `.claude/agents/`, GitHub Copilot `.copilot/agents/`, etc. — the kind of repo cloned into `products/` earlier this session, like `vardot/dev-ai-agents` and `barmoog/ai-agents`), kept distinct from the general-purpose `products/` folder.
+You manage `~/workspace/agents/` — described by `core/config/workspace.agents.settings.yml` (`doc.name: agents`, `database.prefix: agents_`). It's a home for AI agent definition repos (Claude Code `.claude/agents/`, GitHub Copilot `.copilot/agents/`, etc. — for example `webship/ai-agents`, which this workspace syncs from), kept distinct from the general-purpose `products/` folder.
 
 - `cmd-tool-backup-agent.sh <PROJECT_NAME>` — tars the project folder into `${backups}/agents/`.
 - `cmd-tool-git-change-filemode-to-false.sh <PROJECT_NAME>` — `git config core.fileMode false`.
 
 ```bash
 cd ~/workspace/agents
-git clone https://github.com/vardot/dev-ai-agents
+git clone https://github.com/webship/ai-agents
 bash cmd-tool-backup-agent.sh dev-ai-agents
 ```
 

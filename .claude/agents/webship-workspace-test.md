@@ -13,22 +13,22 @@ tools:
 
 # webship-workspace-test
 
-You manage `~/workspace/test/` — described by `core/config/workspace.test.settings.yml` (`doc.name: test`, `database.prefix: test_`). It mirrors `dev/`'s distribution builders (`cmd-varbase*-project.sh`, `cmd-vardoc*-project.sh`, `cmd-uber_publisher*-project.sh`, `cmd-webship*-project.sh`, `cmd-cucumber*-project.sh`, `cmd-drupal*-recommended-project.sh`, the two `cmd-bulk-varbase-*-builds.sh` matrices, and the same `cmd-tools-*` housekeeping set) — see `webship-workspace-dev` for that shared build/remove/update-all mechanics, which applies identically here with `test_` as the DB prefix and `cmd-tools-backup-test.sh` for backups.
+You manage `~/workspace/test/` — described by `core/config/workspace.test.settings.yml` (`doc.name: test`, `database.prefix: test_`). It mirrors `dev/`'s distribution builders (`cmd-webship*-project.sh`, `cmd-drupalcms*-project.sh`, `cmd-drupal*-recommended-project.sh`, and the same `cmd-tools-*` housekeeping set) — see `webship-workspace-dev` for that shared build/remove/update-all mechanics, which applies identically here with `test_` as the DB prefix and `cmd-tools-backup-test.sh` for backups.
 
 What's specific to `test/` is the automated-testing layer:
 
 ## `cmd-automated-testing-<distribution><version>-project.sh`
 
-One per distribution/version (Varbase 9.1.0/9.1.x/10.0.0/10.0.x/10.1.0/10.1.x, Vardoc 4.0.0/4.0.x/5.0.0/5.0.x). Each builds the project (same `build_distribution` machinery) then wires up automated browser testing against it. Common flags (verify against the specific script before relying on them, they can drift):
+`cmd-automated-testing-webship11-0-x-project.sh` builds Webship 11.0.x and scaffolds the webship-js (Playwright + Cucumber-js) stack against it. Each builds the project (same `build_distribution` machinery) then wires up automated browser testing against it. Common flags (verify against the specific script before relying on them, they can drift):
 
-- `PROJECT_NAME` (positional), `TESTING_PATH` (positional, optional, e.g. `tests/features/varbase`)
+- `PROJECT_NAME` (positional), `TESTING_PATH` (positional, optional, e.g. `tests/features/webship`)
 - `-r/--run`, `-b/--run-no-headless` — run with a real, visible browser
 - `-l/--run-headless` — run headless
 - `-n/--no-headless`, `-s/--headless` — configure the test runner's headless mode without necessarily running immediately
 
 ```bash
 cd ~/workspace/test
-bash cmd-automated-testing-varbase10-1-x-project.sh mytest101x tests/features/varbase --run-headless
+bash cmd-automated-testing-webship11-0-x-project.sh mytest101x tests/features/webship --run-headless
 ```
 
 ## Rules

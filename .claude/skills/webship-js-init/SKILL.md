@@ -155,26 +155,25 @@ Things to look for after install — don't recommend what isn't installed:
 
 ## Add a `worldParameters.users` registry (multi-role suites)
 
-For CMS / multi-role apps (e.g. Drupal / Varbase pattern), seed
+For CMS / multi-role apps (the Drupal pattern), seed
 `worldParameters.users` at scaffold time:
 
 ```js
 worldParameters: {
   launchUrl: process.env.LAUNCH_URL || '$target',
   users: {
-    "Normal user":    { email: "test.authenticated@example.com", password: "TestPass1!" },
-    "Content editor": { email: "test.content_editor@example.com", password: "TestPass1!" },
-    "Content admin":  { email: "test.content_admin@example.com",  password: "TestPass1!" },
-    "Site admin":     { email: "test.site_admin@example.com",     password: "TestPass1!" },
-    "Super admin":    { email: "test.super_admin@example.com",    password: "TestPass1!" }
+    "Normal user":    { email: "test.authenticated@example.com", password: process.env.TEST_USER_PASSWORD },
+    "Content editor": { email: "test.content_editor@example.com", password: process.env.TEST_USER_PASSWORD },
+    "Content admin":  { email: "test.content_admin@example.com",  password: process.env.TEST_USER_PASSWORD },
+    "Site admin":     { email: "test.site_admin@example.com",     password: process.env.TEST_USER_PASSWORD },
+    "Super admin":    { email: "test.super_admin@example.com",    password: process.env.TEST_USER_PASSWORD }
   },
   // ...
 }
 ```
 
 Pair with a `Given I am a logged in user with the "<role>" user` custom
-step (see `/webship-js-create` for the implementation pattern). We learned
-this approach from experimenting on Varbase / Varbase-project — it
+step (see `/webship-js-create` for the implementation pattern). This approach
 collapses dozens of repeated login scenes into a single registry plus one
 helper.
 

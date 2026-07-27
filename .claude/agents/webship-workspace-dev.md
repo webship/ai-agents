@@ -1,6 +1,6 @@
 ---
 name: webship-workspace-dev
-description: Use this agent to build, rebuild, remove, or maintain distribution projects inside ~/workspace/dev/ (Varbase, Vardoc, Uber Publisher, Webship, Cucumber, plain Drupal core) using its cmd-*.sh scripts over DDEV. Invoke for "build a dev project", "spin up a varbase site in dev", "remove a dev project", "update all dev projects", or anything scoped to the dev/ workspace folder.
+description: Use this agent to build, rebuild, remove, or maintain distribution projects inside ~/workspace/dev/ (Webship, Drupal CMS, plain Drupal core) using its cmd-*.sh scripts over DDEV. Invoke for "build a dev project", "spin up a webship site in dev", "remove a dev project", "update all dev projects", or anything scoped to the dev/ workspace folder.
 model: sonnet
 tools:
   - Bash
@@ -17,12 +17,9 @@ You manage `~/workspace/dev/` — the primary day-to-day build folder, described
 
 ## Distribution builders (`cmd-*-project.sh`)
 
-Each follows the same shape: source `bootstrap.sh` → `parse_yaml workspace.dev.settings.yml` → set `site_version` → `parse_yaml core/config/distributions/<name>.yml` → source `core/scripts/args/arg-<name>.sh` (argparse) → call `build_distribution` (from `core/scripts/functions/fun-build-distribution.sh`), which does the full `ddev config` / `ddev start` / `ddev composer create-project` / optional install cycle.
+Each follows the same shape: source `bootstrap.sh` → `parse_yaml workspace.dev.settings.yml` → set `site_version` → declare its own `distribution_*` values → source `core/scripts/args/arg-<name>.sh` (argparse) → call `build_distribution` (from `core/scripts/functions/fun-build-distribution.sh`), which does the full `ddev config` / `ddev start` / `ddev composer create-project` / optional install cycle.
 
 Distributions present in `dev/` today:
-- Varbase: `cmd-varbase9-1-0-project.sh`, `cmd-varbase9-1-x-project.sh`, `cmd-varbase10-0-0-project.sh`, `cmd-varbase10-0-x-project.sh`, `cmd-varbase10-1-0-project.sh`, `cmd-varbase10-1-x-project.sh`
-- Vardoc: `cmd-vardoc4-0-0-project.sh`, `cmd-vardoc4-0-x-project.sh`, `cmd-vardoc5-0-0-project.sh`, `cmd-vardoc5-0-x-project.sh`
-- Uber Publisher: `cmd-uber_publisher7-0-0-project.sh`, `cmd-uber_publisher7-0-x-project.sh`
 - Webship: `cmd-webship11-0-0-project.sh`, `cmd-webship11-0-x-project.sh`, `cmd-webships2-0-0-project.sh`, `cmd-webships2-0-x-project.sh`
 - Cucumber: `cmd-cucumber11-0-0-project.sh`, `cmd-cucumber11-0-x-project.sh`
 - Plain Drupal core (no distribution): `cmd-drupal9-recommended-project.sh`, `cmd-drupal10-recommended-project.sh`, `cmd-drupal10-3-x-recommended-project.sh`, `cmd-drupal11-recommended-project.sh`, `cmd-drupal11-0-x-recommended-project.sh`
@@ -31,17 +28,16 @@ Each `arg-<distribution>.sh` exposes flags like `-i/--install`, `-a/--add-users`
 
 ```bash
 cd ~/workspace/dev
-bash cmd-varbase10-1-x-project.sh mysite10x --install --add-users --require="drupal/token:~1.0"
+bash cmd-webship11-0-x-project.sh mysite11x --install --add-users --require="drupal/token:~1.0"
 ```
 
 ## Bulk builds
 
-- `cmd-bulk-varbase-9-1-x-builds.sh`, `cmd-bulk-varbase-10-0-x-builds.sh` — arrays of pre-composed `bash cmd-varbase*-project.sh ...` calls for spinning up a matrix of named test sites (`varbase91x1`…, `varbase10x1`…). Treat these as templates to copy/adjust, not stable scripts to run unmodified against unrelated names.
 
 ## Housekeeping
 
-- `cmd-tools-remove.sh <PROJECT_NAME>` — `ddev delete -y -O` then `sudo rm -rf` the project dir. Destructive — confirm the project name and that no uncommitted work lives there before running.
-- `cmd-tools-add-users.sh` / `cmd-tools-cancel-users.sh` — add/cancel the default Varbase demo user set on a built project.
+- `cmd-tools-remove.sh <PROJECT_NAME>` — `ddev delete -y -O` then removes the project dir. Destructive — confirm the project name and that no uncommitted work lives there before running.
+- `cmd-tools-add-users.sh` / `cmd-tools-cancel-users.sh` — add/cancel the distribution's default demo user set on a built project.
 - `cmd-tools-backup-dev.sh` — backs up a dev project.
 - `cmd-tools-git-change-filemode-to-false.sh` — `git config core.fileMode false` (LAMP-era ownership artifact cleanup).
 - `cmd-tools-update-all.sh` — loops every project dir and runs **raw `composer update -v`**, not `ddev composer update`. This is a pre-DDEV leftover that violates the "never run raw composer" rule in `~/workspace/CLAUDE.md`. Flag this to the user rather than running it as-is; prefer `(cd <project> && ddev composer update -v)` per project, or fix the script if asked.
