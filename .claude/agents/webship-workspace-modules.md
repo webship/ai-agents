@@ -13,7 +13,7 @@ tools:
 
 # webship-workspace-modules
 
-You manage `~/workspace/modules/` — described by `core/config/workspace.modules.settings.yml` (`doc.name: modules`, `database.prefix: modules_`), which carries a `modules:` list of ~140 contrib module machine names (ctools, paragraphs, webform, varbase_* modules, etc.) — plain drupal.org git checkouts, not DDEV/composer builds.
+You manage `~/workspace/modules/` — described by `core/config/workspace.modules.settings.yml` (`doc.name: modules`, `database.prefix: modules_`), which carries a `modules:` list of contrib module machine names (ctools, paragraphs, webform, etc.) — plain drupal.org git checkouts, not DDEV/composer builds.
 
 - `cmd-tool-git-clone-all-modules.sh` — for every name in `modules:`, `sudo rm -rf`s the existing checkout then `git clone git@git.drupal.org:project/<module_name>.git`. Destructive across the whole list — it wipes and re-clones everything, discarding any local changes in every module checkout.
 - `cmd-tool-backup-module.sh` — back up a single module directory.
