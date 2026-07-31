@@ -1033,6 +1033,18 @@ Paths:
 
 ---
 
+## CI/CD
+
+Universal 5-step shape: Node 20 → `npm ci` + `npx playwright install --with-deps chromium` → background the app (`npm start &` + `npx wait-on $LAUNCH_URL --timeout 30000`) → `npm test` → upload `tests/reports/` + `screenshots/` **always** (`if: always()` / `when: always` / `post { always }`). Everything per-environment is an ENV VAR, never a YAML edit: `LAUNCH_URL`, `BROWSER`, `SLOW_MO=0`, `WEBSHIP_VIDEO=on-failure`, `FORCE_COLOR=1`. One template serves the fleet.
+
+Provider quirks worth remembering: the Docker image tag (`mcr.microsoft.com/playwright:v<version>-jammy`) MUST match `package.json`'s Playwright version — upgrade both in one MR. GitLab: pin `node:20.x`, `artifacts: expire_in`, `include:` a CI template repo, `parallel: matrix` over `BROWSER` or feature folders. GitHub Actions: `workflow_call` reusable workflow with two inputs (launch URL, tag expression); smoke gate = branch-protection required check; deploy = `needs: [smoke, regression]`. Jenkins: `JENKINS_NODE_COOKIE=dontKillMe` + nohup (ProcessTreeKiller reaps `npm start &`). CircleCI: `background: true` (a bare `&` dies per run-shell). Semaphore: `nohup`; artifacts in `epilogue.always`. Cloud Build: `options.machineType: E2_HIGHCPU_8`.
+
+Sharding: `--shard 1/4`, or a matrix over sorted file splits with the JSONs merged in a final job; combine with `--parallel 2` inside shards. Parallel workers: start at 4 — each is a full Chromium, and `--parallel $(nproc)` on 16 cores is an OOM that reads as flake. Parallelism moves the bottleneck to the app server, so coordinate concurrent sessions.
+
+PR gate = a Chromium-only `@smoke`/`@critical` run, the identical command in every repo; `@api` suites are the cheapest first gate because they need no browser; full regression and the browser matrix run nightly, as do `@a11y` and `@external` (the latter alone). Use the same job names everywhere — names are the interface.
+
+---
+
 ## Custom step pattern
 
 ```js
