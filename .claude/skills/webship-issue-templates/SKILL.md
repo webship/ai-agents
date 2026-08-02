@@ -1,6 +1,6 @@
 ---
 name: webship-issue-templates
-description: Canonical Webship templates for issues and MRs/PRs — the drupal.org default issue summary template (HTML with ✅/❌/➖ Remaining tasks), the GitHub issue template (markdown adaptation), and the Checkpoints checklist every MR/PR description must end with. Use when creating or updating an issue on drupal.org or GitHub, opening an MR on git.drupalcode.org or a PR on GitHub, or flipping ✅/❌/➖ marks as work progresses.
+description: Canonical Webship templates for issues and MRs/PRs — the drupal.org default issue summary template (HTML with ✅/❌/➖ Remaining tasks), the GitHub issue template (markdown adaptation), the Checkpoints checklist every MR/PR description must end with, and the in-repo `.gitlab/` and `.github/` issue + MR/PR templates every Webship project ships. Use when creating or updating an issue on drupal.org, git.drupalcode.org or GitHub, opening an MR on git.drupalcode.org or a PR on GitHub, adding the repo template files to a project branch, setting a drupal.org project's Custom issue summary template, or flipping ✅/❌/➖ marks as work progresses.
 ---
 
 # Webship Issue & MR/PR Templates
@@ -22,23 +22,29 @@ Update marks as work progresses — the same issue body is edited over its lifet
 GitHub PRs and GitLab (git.drupalcode.org) MRs end with this checklist, ticking only what is actually done at the time of writing:
 
 ```markdown
-### Checkpoints
-- [x] File an issue about this project
-- [x] Addition/Change/Update/Fix to this project
+### Checkpoints:
+- [x] File an issue
+- [x] Addition/Change/Update/Fix
 - [ ] Testing to ensure no regression
-- [ ] Automated unit/functional testing coverage
-- [ ] Developer Documentation support on feature change/addition
-- [ ] User Guide Documentation support on feature change/addition
+- [ ] Automated unit testing coverage
+- [ ] Automated functional testing coverage
 - [ ] UX/UI designer responsibilities
-- [ ] Accessibility and Readability
-- [ ] Reviewed by a human
+- [ ] Readability
+- [ ] Accessibility
+- [ ] Performance
+- [ ] Security
+- [ ] Developer Documentation
+- [ ] User Guide Documentation
+- [ ] Reviewed by human
 - [ ] Code review by maintainers
 - [ ] Full testing and approval
 - [ ] Credit contributors
 - [ ] Review with the product owner
-- [ ] Update Release Notes
+- [ ] Release notes snippet
 - [ ] Release
 ```
+
+This is the same list that ships in a project's `.gitlab/merge_request_templates/default.md` (section 4), so an MR opened from the GitLab UI and one opened by an agent read identically.
 
 ## 2. drupal.org issues — default issue summary template (HTML)
 
@@ -46,7 +52,7 @@ Issue bodies on drupal.org are HTML (CKEditor). Always start from the full templ
 
 > **First, check where the issue actually lives.** Some drupal.org projects have moved their queue onto **GitLab work items** — the issue URL is `https://git.drupalcode.org/project/<project>/-/work_items/<id>` and there is no `drupal.org/node/<nid>` behind it. **Work items render Markdown, not HTML.** Pasting the HTML template into one leaves raw `<h3>`/`<p>` tags on the page.
 >
-> For a GitLab work item, keep this exact template *structure* but write it in Markdown: `## Problem / Motivation`, fenced code blocks, and `- [ ]` / `- [x]` for Remaining tasks (GitLab turns those into real, tickable task items — see §2b). Everything else is unchanged: the commit format, `By: <drupal username>`, the AI-disclosure line, the Checkpoints block, and the rule that **`Reviewed by a human` and `Code review by maintainers` are never ticked**.
+> For a GitLab work item, keep this exact template *structure* but write it in Markdown: `## Problem / Motivation`, fenced code blocks, and `- [ ]` / `- [x]` for Remaining tasks (GitLab turns those into real, tickable task items — see "drupal.org issues that live in GitLab work items" below). Everything else is unchanged: the commit format, the AI-disclosure line, the Checkpoints block, and the rule that **`Reviewed by a human` and `Code review by maintainers` are never ticked**.
 >
 > Rule of thumb: **only a classic drupal.org issue node is HTML. Everything on GitLab/GitHub — MR, PR, and work-item issue — is Markdown.**
 
@@ -60,12 +66,12 @@ Issue bodies on drupal.org are HTML (CKEditor). Always start from the full templ
 <h3 id="summary-remaining-tasks">Remaining tasks</h3>
 
 <ul>
-    <li>✅ File an issue about this project</li>
-    <li>❌ Addition/Change/Update/Fix to this project</li>
+    <li>✅ File an issue</li>
+    <li>❌ Addition/Change/Update/Fix</li>
     <li>❌ Testing to ensure no regression</li>
     <li>➖ Automated unit/functional testing coverage</li>
-    <li>➖ Developer Documentation support on feature change/addition</li>
-    <li>➖ User Guide Documentation support on feature change/addition</li>
+    <li>➖ Developer Documentation support</li>
+    <li>➖ User Guide Documentation support</li>
     <li>➖ UX/UI designer responsibilities</li>
     <li>➖ Accessibility and Readability</li>
     <li>❌ Reviewed by a human</li>
@@ -104,7 +110,7 @@ Issue bodies on drupal.org are HTML (CKEditor). Always start from the full templ
 
 ## 2b. drupal.org issues that live in GitLab work items — same template, Markdown
 
-When the project's queue is on GitLab (`git.drupalcode.org/project/<project>/-/work_items/<id>`), use the SAME sections as §2, written in Markdown. The Remaining tasks / Checkpoints checkboxes become real GitLab task items.
+When the project's queue is on GitLab (`git.drupalcode.org/project/<project>/-/work_items/<id>`), use the SAME sections as the HTML template above, written in Markdown. The Remaining tasks / Checkpoints checkboxes become real GitLab task items.
 
 ````markdown
 ## Problem / Motivation
@@ -156,25 +162,162 @@ On **GitHub**, do NOT reproduce the drupal.org summary template. No `### Remaini
 
 ### Proposed resolution
 
-### Checkpoints
-
-- [x] File an issue about this project
-- [ ] Addition/Change/Update/Fix to this project
+### Checkpoints:
+- [x] File an issue
+- [ ] Addition/Change/Update/Fix
 - [ ] Testing to ensure no regression
-- [ ] Automated unit/functional testing coverage
-- [ ] Developer Documentation support on feature change/addition
-- [ ] User Guide Documentation support on feature change/addition
-- [ ] Accessibility and Readability
-- [ ] Reviewed by a human
+- [ ] Automated unit testing coverage
+- [ ] Automated functional testing coverage
+- [ ] UX/UI designer responsibilities
+- [ ] Readability
+- [ ] Accessibility
+- [ ] Performance
+- [ ] Security
+- [ ] Developer Documentation
+- [ ] User Guide Documentation
+- [ ] Reviewed by human
 - [ ] Code review by maintainers
 - [ ] Full testing and approval
 - [ ] Credit contributors
 - [ ] Review with the product owner
-- [ ] Update Release Notes
+- [ ] Release notes snippet
 - [ ] Release
 ```
 
 Tick only what is genuinely done (`- [x]`), leave the rest `- [ ]`; never tick `Reviewed by a human` or `Code review by maintainers`. Items that don't apply: strike them (`- [ ] ~Automated unit/functional testing coverage~`) — GitHub checkboxes have no ➖. The ✅/❌/➖ marks and the UI/API/Data-model/Release-notes sections are **drupal.org only** (the HTML template above); they never appear in a GitHub issue or PR.
+
+## 4. Project repo templates — `.gitlab/` on git.drupalcode.org
+
+Every Webship-maintained project on git.drupalcode.org carries these two files, on **every branch that has an active `.x-dev` release**, so the GitLab UI pre-fills the right shape for anyone opening a work item or an MR. GitLab renders both as **Markdown** — never HTML.
+
+### `.gitlab/issue_templates/default.md`
+
+```markdown
+### Problem/Motivation
+
+#### Steps to reproduce
+
+### Proposed resolution
+
+
+### Remaining tasks:
+- [x] File an issue
+- [ ] Addition/Change/Update/Fix
+- [ ] Testing to ensure no regression
+- [ ] Automated unit testing coverage
+- [ ] Automated functional testing coverage
+- [ ] UX/UI designer responsibilities
+- [ ] Readability
+- [ ] Accessibility
+- [ ] Performance
+- [ ] Security
+- [ ] Developer Documentation
+- [ ] User Guide Documentation
+- [ ] Reviewed by human
+- [ ] Code review by maintainers
+- [ ] Full testing and approval
+- [ ] Credit contributors
+- [ ] Review with the product owner
+- [ ] Release notes snippet
+- [ ] Release
+
+### API changes
+* N/A
+
+### Data model changes
+* N/A
+
+### Release notes snippet
+* N/A
+```
+
+### `.gitlab/merge_request_templates/default.md`
+
+The Checkpoints checklist from section 1, as the whole file:
+
+```markdown
+### Checkpoints:
+- [x] File an issue
+- [x] Addition/Change/Update/Fix
+- [ ] Testing to ensure no regression
+- [ ] Automated unit testing coverage
+- [ ] Automated functional testing coverage
+- [ ] UX/UI designer responsibilities
+- [ ] Readability
+- [ ] Accessibility
+- [ ] Performance
+- [ ] Security
+- [ ] Developer Documentation
+- [ ] User Guide Documentation
+- [ ] Reviewed by human
+- [ ] Code review by maintainers
+- [ ] Full testing and approval
+- [ ] Credit contributors
+- [ ] Review with the product owner
+- [ ] Release notes snippet
+- [ ] Release
+```
+
+## 5. Project repo templates — `.github/` on github.com
+
+The GitHub mirrors carry the same two shapes, in GitHub's own locations. Both are **Markdown**. Per section 3, a GitHub issue never carries the drupal.org ✅/❌/➖ marks or the UI/API/data-model/release-notes sections — it ends with **Checkpoints**.
+
+### `.github/ISSUE_TEMPLATE/default.md`
+
+```markdown
+---
+name: Default
+about: Report a problem or propose a change
+title: ''
+labels: ''
+assignees: ''
+---
+
+### Problem/Motivation
+
+#### Steps to reproduce
+
+### Proposed resolution
+
+### Checkpoints:
+- [x] File an issue
+- [ ] Addition/Change/Update/Fix
+- [ ] Testing to ensure no regression
+- [ ] Automated unit testing coverage
+- [ ] Automated functional testing coverage
+- [ ] UX/UI designer responsibilities
+- [ ] Readability
+- [ ] Accessibility
+- [ ] Performance
+- [ ] Security
+- [ ] Developer Documentation
+- [ ] User Guide Documentation
+- [ ] Reviewed by human
+- [ ] Code review by maintainers
+- [ ] Full testing and approval
+- [ ] Credit contributors
+- [ ] Review with the product owner
+- [ ] Release notes snippet
+- [ ] Release
+```
+
+### `.github/pull_request_template.md`
+
+Identical body to `.gitlab/merge_request_templates/default.md` (the Checkpoints checklist from section 1) — one checklist, both hosts.
+
+## 6. drupal.org project settings — Custom issue summary template
+
+On the project node's edit form (drupal.org → the project → **Edit** → *Issue settings* → **Custom issue summary template**), paste the HTML from section 2 verbatim. That field is HTML because a classic drupal.org issue node is HTML; it is the only place in this file where HTML is correct alongside section 2.
+
+**Which format, where — the one rule that decides it:**
+
+| Destination | Format |
+|-------------|--------|
+| Classic drupal.org issue node (`drupal.org/node/<nid>`) and the project's Custom issue summary template field | **HTML** |
+| GitLab work item on git.drupalcode.org, `.gitlab/` templates, GitLab MR description | **Markdown** |
+| GitHub issue, GitHub PR description | **Markdown** |
+
+HTML pasted into a GitLab or GitHub body leaves raw tags on the page; Markdown pasted into a drupal.org issue node shows its `###` and backticks literally.
 
 ## Usage rules
 
@@ -188,4 +331,5 @@ Tick only what is genuinely done (`- [x]`), leave the rest `- [ ]`; never tick `
 8. **Worked examples** — for patch work on webship-patches / drupal-core-patches, follow [`references/webship-patches-examples.md`](references/webship-patches-examples.md): the Add/Remove/Change title grammar, the patch-file vs composer.json PR split, and the immutable-patch re-roll rule, all with real issue/PR numbers.
 9. **One issue + one PR per fix** — never bundle multiple patches/fixes into one issue or one PR; each change gets its own dedicated issue and its own PR/MR so every review thread tells one clean story. If an issue/PR ends up mixing several, close it and re-create separate single-purpose ones.
 10. **Reuse vs. new MR** — if a drupal.org / git.drupalcode.org issue already has an MR we can push to: a **small** change (minor edit, reroll, tweak) → commit to that existing MR; a **big** change (substantially different approach/diff) → open a **new** MR. No accessible MR (or the existing one is another contributor's fork we can't push to) → open our own issue-fork MR. Never hijack someone else's MR.
-11. **Never tick the human-review flags** — the AI must never check `Reviewed by a human` or `Code review by maintainers`; they stay `- [ ]` / ❌ until the human reviewer sets them.
+11. **Byte-exact copies for committing** — when adding the repo templates to a project branch, copy the files from [`references/repo-templates/`](references/repo-templates/) rather than retyping them from the fenced blocks above (`gitlab/issue_templates/default.md`, `gitlab/merge_request_templates/default.md`, `github/ISSUE_TEMPLATE/default.md`, `github/pull_request_template.md`, and `drupal-org-custom-issue-summary-template.html` for the project-settings field). The fenced blocks in this file are the documentation; those files are the artifact.
+12. **Never tick the human-review flags** — the AI must never check `Reviewed by a human` or `Code review by maintainers`; they stay `- [ ]` / ❌ until the human reviewer sets them.
