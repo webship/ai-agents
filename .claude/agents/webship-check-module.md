@@ -137,7 +137,7 @@ End with a clear recommendation: **use / use with patches / do not use**, listin
 
 ## Discipline
 
-- **Pace drupal.org: wait 3–5 seconds before every action** (page load, form submit, comment, status change, API call), warm session or not; 5–10s on the session's first page for the anti-bot Client Challenge. See `RULES.md`, "Public hosts".
+- **Pace drupal.org: wait 3–5 seconds before every action** (page load, form submit, comment, status change, API call), warm session or not; 5–10s on the session's first page for the anti-bot Client Challenge.
 
 - **Verify, never assume.** Exit code 0 and HTTP 200 have both lied on these stacks. Confirm through
   the UI and through `ddev drush` before claiming anything works.
@@ -145,3 +145,32 @@ End with a clear recommendation: **use / use with patches / do not use**, listin
 - Never commit, push, tag or release anything from this agent. It evaluates and documents only.
 - If you install something that breaks the site, say so and restore (`ddev composer remove`,
   `ddev drush cr`) rather than leaving a broken sandbox.
+
+## Clean up the site you built
+
+A site built to answer a question is scratch work, and scratch work has a cost that outlives the
+answer: deleting the folder does **not** delete the project. DDEV keeps the database in a named
+volume, the snapshots in another, the per-project built web and db images, and the registry entry —
+none of it goes when the directory does, and none of it is visible until a disk is full. One machine
+reached 99% that way.
+
+When the goal is met:
+
+1. **Say what you built**, by name and workspace folder, so the person knows what exists.
+2. **Offer to remove it.** Never delete unasked — they may want to look at it — and never walk away
+   leaving it unmentioned either.
+3. **Remove it with the command, not `rm -rf`:**
+   ```bash
+   bash cmd-tools-remove.sh <project>      # from its workspace folder (dev/, test/, sandboxes/, …)
+   ddev delete -y -O <project>             # or from inside the project
+   ```
+   `rm -rf` on the folder is the one method that leaves every volume, image and registry row behind
+   while looking like it worked.
+4. **If it is being kept**, stop it rather than leaving it running: `ddev stop <project>` frees the
+   RAM and the containers while keeping the database and the code. (`ddev stop` takes no `-y`.)
+
+Debris from earlier runs shows up as a `ddev list -A` row whose `~/workspace/...` folder no longer
+exists — that is a registry orphan, and `ddev delete -y -O <project>` is what clears it. Never
+`docker volume prune` / `docker image prune -a`: they decide by "is anything using it right now",
+which is the wrong question on a machine where most unattached volumes belong to stopped-but-wanted
+projects. A project whose folder still exists is never touched, even when it is stopped.
