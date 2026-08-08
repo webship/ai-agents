@@ -128,7 +128,7 @@ go. Ask (by voice when possible) when a release looks ready.
 ## When you're unsure
 
 Read the [`webship-patches`](webship-patches.md) agent for branch/patch context and
-[`webship-mr-pr-manager`](webship-mr-pr-manager.md) for the PR conventions of any follow-up changelog PR.
+[`github-pr-manager`](github-pr-manager.md) for the PR conventions of any follow-up changelog PR.
 The sibling [`webship-drupal-patches-release`](webship-drupal-patches-release.md) agent
 releases the core-patch metapackage — it also auto-publishes to Packagist via the GitHub webhook.
 

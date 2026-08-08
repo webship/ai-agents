@@ -5,7 +5,7 @@ description: The Webship way to open and maintain merge/pull requests on ANY pla
 
 # Webship MR/PR Manager
 
-The single gateway for merge requests and pull requests across GitHub and GitLab (git.drupalcode.org). This skill owns the MR/PR lifecycle — the fix itself belongs to the caller. Issue templates come from the **webship-issue-templates** skill; issue creation is delegated to the `drupal-issue-manager` / `github-issue-manager` agents.
+The single gateway for merge requests and pull requests across GitHub and GitLab (git.drupalcode.org). This skill owns the MR/PR lifecycle — the fix itself belongs to the caller. Issue templates come from the **webship-issue-templates** skill; issue creation is delegated to `drupal-issue-manager` (drupal.org node queue), `drupalcode-issue-manager` (GitLab work items) or `github-pr-manager` (github.com).
 
 ## Golden rules
 
@@ -67,7 +67,8 @@ Does not merge, approve, or dismiss reviews — human/maintainer actions. GitHub
 
 ## Related skills & agents
 
-- Paired agent: **webship-mr-pr-manager** — the full sub-agent form of this skill.
-- **webship-issue-templates** skill — the issue summary + Checkpoints templates this skill references; issue creation via the `drupal-issue-manager` / `github-issue-manager` agents.
+- Paired agents: **github-pr-manager** (github.com issues and PRs) and **drupalcode-mr-manager**
+  (git.drupalcode.org merge requests) — the full sub-agent forms of this skill, one per host.
+- **webship-issue-templates** skill — the issue summary + Checkpoints templates this skill references; issue creation via `drupal-issue-manager`, `drupalcode-issue-manager` or `github-pr-manager`.
 - **webship-patches** skill + agent — for `webship/patches` patch PRs (see the patch-title grammar and shared-file / multi-version rules).
 - **webship-drupal-patches** skill + agent — for `webship/drupal-patches` core-patch PRs and Packagist-safe never-move release tags (semver within the minor).

@@ -396,7 +396,7 @@ Never commit or push directly to a branch in the canonical repository — not th
 
 Then **ask the maintainer / user to review**. Never merge; never release without explicit approval.
 
-Templates live in the `webship-issue-templates` skill (with saved copies of the Drupal AI policy and commit-types references). Delegate issue creation to the `drupal-issue-manager` / `github-issue-manager` agents and MR/PR creation to the `webship-mr-pr-manager` agent when available, instead of hand-rolling issue/MR bodies.
+Templates live in the `webship-issue-templates` skill (with saved copies of the Drupal AI policy and commit-types references). Delegate issue creation to `drupal-issue-manager` (drupal.org node queue) or `drupalcode-issue-manager` (GitLab work items), and MR/PR creation to `drupalcode-mr-manager` (git.drupalcode.org) or `github-pr-manager` (github.com), instead of hand-rolling issue/MR bodies.
 
 **On a Closed/Fixed issue: always create a NEW issue, a NEW issue-fork, and a NEW MR — never reuse the old one.** Never fork, commit, or open an MR against an issue that is already Closed/Fixed, and never post a comment on one. Porting a fix to another branch whose source issue is Closed/Fixed → file a fresh issue for the port (reference the original for context) and create a NEW issue-fork + MR from that new issue's page — never reuse or relabel a fork/MR that was created against the old closed issue.
 
@@ -554,13 +554,14 @@ This agent is paired with a **skill** of the same name (`.claude/skills/<this-ag
 
 The related agents/skills in this family are aware of each other; use the right one for the job:
 
-- **webship-mr-pr-manager** — the MR/PR lifecycle gateway (GitHub PRs + git.drupalcode.org MRs; description shape, Checkpoints last, commit-type titles, honest checkbox flips). Skill: `.claude/skills/webship-mr-pr-manager/SKILL.md`; agent: `webship-mr-pr-manager`. Delegate any "open/update the MR or PR" step here.
+- **github-pr-manager** — the github.com issue and PR lifecycle (description shape, Checkpoints last, honest checkbox flips), including the patch-repo PR rules. Delegate any "open/update the PR" step on github.com here.
+- **drupalcode-mr-manager** — the git.drupalcode.org merge-request lifecycle (issue forks, the Commits API, the `gitlab-ci-local` green gate, commit-type titles). Skill: `.claude/skills/webship-mr-pr-manager/SKILL.md` carries the shared conventions for both.
 - **webship-patches** — the `webship/patches` Composer plugin + curated contrib patches (allowlist, wildcard ignore, `patches-ignore`). Skill: `.claude/skills/webship-patches/SKILL.md`; agent: `webship-patches`.
 - **webship-drupal-patches** — the `webship/drupal-patches` metapackage, one branch per Drupal core major.minor. Skill: `.claude/skills/webship-drupal-patches/SKILL.md`; agent: `webship-drupal-patches`.
 - **webship-patches-release** — cuts and manages `webship/patches` releases (tagging, GitHub Release, Packagist verify). Agent: `webship-patches-release`. Delegate any "release webship/patches" step here.
 - **webship-drupal-patches-release** — the release counterpart for `webship/drupal-patches`. Agent: `webship-drupal-patches-release`.
 
-Templates come from the **webship-issue-templates** skill; route issue creation to the `drupal-issue-manager` / `github-issue-manager` agents. Shared rules everywhere: drupal.org commit-type titles (<https://www.drupal.org/node/3586390>), the Checkpoints checklist ending every MR/PR, **"Reviewed by a human"** before **"Code review by maintainers"** (both AI-never-tick), one-issue-one-PR, always link the issue + the MR/PR, and (patches) never-move release tags (semver within the minor).
+Templates come from the **webship-issue-templates** skill; route issue creation to `drupal-issue-manager` (drupal.org node queue), `drupalcode-issue-manager` (GitLab work items) or `github-pr-manager` (github.com). Shared rules everywhere: drupal.org commit-type titles (<https://www.drupal.org/node/3586390>), the Checkpoints checklist ending every MR/PR, **"Reviewed by a human"** before **"Code review by maintainers"** (both AI-never-tick), one-issue-one-PR, always link the issue + the MR/PR, and (patches) never-move release tags (semver within the minor).
 
 ## Local checkouts
 

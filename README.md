@@ -28,10 +28,16 @@ available to Claude Code.
   metapackage (one branch per Drupal core major.minor).
 
 **Issues, patches & MR/PR lifecycle**
-- `webship-issue-template` — create/maintain GitLab work items using the Webship `.gitlab` issue templates.
-- `webship-drupal-issue-manager` — drupal.org issue + issue-fork bookkeeping.
-- `webship-mr-pr-manager` — the single MR/PR lifecycle gateway across GitHub PRs and GitLab /
-  git.drupalcode.org MRs (issue forks, Checkpoints checklist, commit-type titles). Never merges.
+- `drupal-issue-manager` — issues in a **drupal.org node queue** (HTML bodies, no write API, browser only).
+- `drupalcode-issue-manager` — issues that live as **GitLab work items** on git.drupalcode.org (Markdown,
+  GitLab REST API), and the five `.gitlab/issue_templates/*.md` a project ships.
+- `drupalcode-mr-manager` — the **git.drupalcode.org** merge-request lifecycle: issue forks, the Commits
+  API, the `gitlab-ci-local` green gate, Checkpoints checklist, commit-type titles. Never merges.
+- `github-pr-manager` — the **github.com** issue and pull-request lifecycle, including the patch-repo PR
+  rules for `webship/patches` and `webship/drupal-patches`. Never merges.
+
+  Which one to use is decided by the host, and by where the project's issues actually live — open a real
+  issue URL and look, rather than inferring it from the project name.
 - `webship-patches` — install/configure the `webship/patches` Composer plugin (allowlist, wildcard
   ignore, `patches-ignore`), author and re-roll patches, diagnose patch failures.
 - `webship-drupal-patches` — maintain the `webship/drupal-patches` Composer metapackage: curate a
@@ -55,8 +61,8 @@ products, profiles, projects, recipes, sandboxes, skills, test, themes.
 - `patch-management` — generic, non-Webship patch creation/re-roll mechanics for any Drupal project.
 - `webship-issue-templates` — the Webship issue-summary + Checkpoints templates (with saved copies of
   the Drupal AI policy and commit-types reference).
-- `webship-mr-pr-manager` — the MR/PR lifecycle conventions (description shape, Checkpoints last,
-  commit-type titles).
+- `webship-mr-pr-manager` — the MR/PR lifecycle conventions shared by `github-pr-manager` and
+  `drupalcode-mr-manager` (description shape, Checkpoints last, commit-type titles).
 - `webship-js-init`, `webship-js-create`, `webship-js-run`, `webship-js-audit`, `webship-js-steps` —
   the webship-js BDD testing skills (scaffold a suite, author scenarios, run it, audit results, and manage
   step definitions).

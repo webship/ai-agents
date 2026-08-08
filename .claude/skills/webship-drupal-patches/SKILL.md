@@ -76,4 +76,4 @@ Same grammar as webship-patches — `<Action> a patch for the <Target> on <ref>`
 - Release agent: **webship-drupal-patches-release** — cutting and publishing releases.
 - **webship-patches** skill + agent — the plugin that requires this metapackage; contrib (non-core) patches live there.
 - **patch-management** skill — generic, non-Webship cweagans/composer-patches declare/apply/create/re-roll mechanics.
-- **webship-mr-pr-manager** skill + agent — opens/maintains the patch PRs; **webship-issue-templates** skill for the issue + Checkpoints templates.
+- **github-pr-manager** agent — opens/maintains the patch PRs (both patch repos are on github.com); **webship-mr-pr-manager** skill for the shared MR/PR conventions; **webship-issue-templates** skill for the issue + Checkpoints templates.
