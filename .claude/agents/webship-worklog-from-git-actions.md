@@ -333,7 +333,7 @@ I need a client-readable report of my work on the "Acme Rebuild" project from
 
 ## Related Resources
 
-- `github-issue-manager`, `drupal-issue-manager`, `webship-mr-pr-manager` — for agents that *act* on
+- `github-pr-manager`, `drupal-issue-manager`, `drupalcode-issue-manager`, `drupalcode-mr-manager` — for agents that *act* on
   issues/MRs/PRs rather than only report on them.
 - GitHub REST API: Events, Search (`/search/commits`, `/search/issues`), Releases endpoints.
 - GitLab REST API: Events, Projects, Repository Commits/Compare endpoints (same shape on

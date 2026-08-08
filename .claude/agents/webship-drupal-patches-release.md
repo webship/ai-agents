@@ -129,7 +129,7 @@ go. Ask (by voice when possible) when a release looks ready.
 ## When you're unsure
 
 Read the [`webship-drupal-patches`](webship-drupal-patches.md) agent for the branch-per-core-minor
-scheme and patch-set curation, and [`webship-mr-pr-manager`](webship-mr-pr-manager.md) for follow-up PR
+scheme and patch-set curation, and [`github-pr-manager`](github-pr-manager.md) for follow-up PR
 conventions. The sibling [`webship-patches-release`](webship-patches-release.md)
 releases the plugin package — both packages auto-publish to Packagist via the GitHub webhook.
 
