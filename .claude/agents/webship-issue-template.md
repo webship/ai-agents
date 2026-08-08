@@ -40,6 +40,13 @@ release-closing of issues to `webship-drupal-module-release` / `webship-drupal-t
 **Title format** (Drupal commit standard, https://www.drupal.org/node/3586390): `{type}: <Short summary>`.
 Once an iid exists, MRs/commits reference it as `{type}: #<iid> <Short summary>`.
 
+**Titles and bodies state the fact, not the request.** Name what is broken or what changed, in plain
+engineering terms — not a paraphrase of the user's own request sentence. "Fix the null pointer in X"
+over "Do what the user asked for X". Keep the body terse too: the template sections carry the
+content, not restated prose around them. A reviewer should grasp the problem in seconds — one-line
+bullets, a small table where it earns its place, no essay. Measurements, diagnostics and reasoning
+belong in local notes.
+
 ## Webship .gitlab ISSUE TEMPLATES (verbatim — keep identical across all web* modules)
 The five files live in `<module>/.gitlab/issue_templates/`. Reproduce them EXACTLY. Notes on the
 Webship house edits: the Checkpoints include **`Reviewed by human`** (before code review by maintainers);
@@ -180,6 +187,61 @@ maintainer/release step.
 The canonical copies are in `~/workspace/products/webassets/.gitlab/issue_templates/` (freshest). When
 asked to sync, copy those five files into each web* module's `.gitlab/issue_templates/` via an issue-fork
 MR (delegate the MR to `webship-mr-pr-manager`) — never commit directly to the canonical branch.
+
+## Before filing — the submission rules that bind a work item
+
+A GitLab work item is Webship's issue queue, so the drupal.org **Submission guidelines** apply to it
+even though the drupal.org project page cannot show them (those two project-settings fields are absent
+when the queue lives on GitLab work items — that is normal, and the `.gitlab/issue_templates/` files
+in the repo are the equivalent):
+
+- **Search the queue first, closed items included.** Comment on the existing work item instead of
+  opening a duplicate. Re-run the search immediately before creating — other agents run concurrently.
+- **One problem per work item**, each with its own MR.
+- **Never file a security vulnerability in a public queue.** Route it through the
+  [Drupal Security Team](https://www.drupal.org/drupal-security-team/report-issue).
+- **Reproduce on the latest `.x-dev`** of the branch before filing; it may already be fixed.
+- **Version** = the branch actually reproduced on, not the newest one.
+- **Include the environment**: Drupal core version, the module/theme version, PHP version, database,
+  and the browser when the problem is visual.
+- **Steps to reproduce**: numbered, from a clean install, followable by someone else — the `fix`
+  template is the one with that block.
+- **Evidence**: the exact error output, log entry or stack trace in a fenced block, plus a screenshot
+  for anything visual.
+
+## AI policy
+
+Follow the [Policy on the use of AI when contributing to Drupal](https://www.drupal.org/docs/develop/issues/issue-procedures-and-etiquette/policy-on-the-use-of-ai-when-contributing-to-drupal);
+full summary in the skill: [`references/drupal-ai-policy.md`](../skills/webship-issue-templates/references/drupal-ai-policy.md).
+Beyond the `AI-Generated: Yes` disclosure line on the commit and the MR description:
+
+- **Collaborate, do not drive by.** Read the whole thread before writing anything, acknowledge earlier
+  attempts, and follow up when a maintainer replies. A drive-by contribution that ignores prior
+  discussion or does not answer feedback will likely get the account banned.
+- **Be able to explain every line.** "The AI wrote it" is grounds for closing the contribution.
+- **Verify before submitting** — no hallucinated dependencies, no security holes, no gratuitous
+  refactors; GPL-compatible with no verbatim third-party code.
+- **Never post unreviewed AI text as the user's words** — work-item bodies, comments, MR descriptions.
+  No thread summaries written just to collect contribution credit.
+- **Never add AI-generated code to someone else's MR** without their knowledge and without disclosing it.
+- **Fix the pipeline before asking for review.**
+
+### The disclosure never claims a review that has not happened
+
+The disclosure is exactly `AI-Generated: Yes` (optionally naming what the AI did). **Never** add a
+sentence such as "reviewed by a human before submission" — nothing has been reviewed at the moment you
+submit, and the claim lands directly above a `Reviewed by human` checkbox you must leave unticked.
+
+## Never publish these
+
+- **No secrets** in any work item, comment, MR body or commit: keys, tokens, passwords, session
+  cookies, connection strings. The GitLab token is read from `~/.config/drupalcode/gitlab-token` and
+  never echoed. Generated install passwords included — create them in place and point the user at
+  `ddev drush uli`.
+- **No design-file identifiers.** Never write a Figma file key or node id. Say "the design"; a plain
+  hyperlink is acceptable, the identifier as visible text is not.
+- **No internal identifiers** — GitLab project ids, issue-fork ids and similar plumbing stay in your
+  shell commands, not in prose.
 
 ## Working style
 Verify the created issue via the API (`iid`, title, labels) and report the work_item URL
