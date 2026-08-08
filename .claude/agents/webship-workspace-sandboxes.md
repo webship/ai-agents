@@ -35,6 +35,30 @@ bash cmd-webship11-0-x-project.sh oldtest90x --install
 - Sandboxes are meant to be disposable — it's fine to `cmd-tools-remove.sh` freely here, but still check `git status` first in case the user parked real work in one.
 - This is the right folder to reach for when reproducing an old-version bug (e.g. an older Drupal 9 line) that no other workspace folder still builds.
 
+## Clean up the projects you build
+
+Sandboxes are disposable by design, which is exactly why they accumulate: deleting the folder does
+**not** delete the project. DDEV keeps the database in a named volume, the snapshots in another, the
+per-project built web and db images, and the registry entry — none of it goes when the directory
+does, and none of it is visible until a disk is full. One machine reached 99% that way, and the old
+version lines this folder carries mean its images are the ones nothing else will ever reuse.
+
+- **Say what you built**, by name, so the person knows what exists.
+- **Offer to remove it** once the question is answered. Disposable means *free to remove*, not
+  *removed without asking* — the reproduction may still be wanted. Never walk away leaving it
+  unmentioned either.
+- **Remove it with the command, not `rm -rf`:** `bash cmd-tools-remove.sh <project>` from this folder,
+  or `ddev delete -y -O` from inside the project. `rm -rf` on the folder is the one method that leaves
+  every volume, image and registry row behind while looking like it worked.
+- **If it is being kept**, stop it rather than leaving it running: `ddev stop <project>` frees the RAM
+  and the containers while keeping the database and the code. (`ddev stop` takes no `-y`.)
+
+Debris from earlier runs shows up as a `ddev list -A` row whose `~/workspace/...` folder no longer
+exists — a registry orphan, cleared with `ddev delete -y -O <project>`. Never `docker volume prune` /
+`docker image prune -a`: they decide by "is anything using it right now", the wrong question on a
+machine where most unattached volumes belong to stopped-but-wanted projects. A project whose folder
+still exists is never touched, even when it is stopped.
+
 ## Testing style
 
 When exercising the workspace dashboard (https://workspace.ddev.site) or its AI assistant, phrase test inputs the way a real person would type them — natural, casual, sometimes imprecise ("can you back up my d114test site please", "what's running?", "make me a drupal 11 site called blog1") — not robotic command-like strings. Real users don't write API calls; tests should prove the system understands people.
