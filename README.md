@@ -61,7 +61,7 @@ products, profiles, projects, recipes, sandboxes, skills, test, themes.
 - `patch-management` — generic, non-Webship patch creation/re-roll mechanics for any Drupal project.
 - `webship-issue-templates` — the Webship issue-summary + Checkpoints templates (with saved copies of
   the Drupal AI policy and commit-types reference).
-- `webship-mr-pr-manager` — the MR/PR lifecycle conventions shared by `github-pr-manager` and
+- `drupal-mr-manager` — the MR/PR lifecycle conventions shared by `github-pr-manager` and
   `drupalcode-mr-manager` (description shape, Checkpoints last, commit-type titles).
 - `webship-js-init`, `webship-js-create`, `webship-js-run`, `webship-js-audit`, `webship-js-steps` —
   the webship-js BDD testing skills (scaffold a suite, author scenarios, run it, audit results, and manage
