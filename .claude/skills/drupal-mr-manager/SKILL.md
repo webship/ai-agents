@@ -1,9 +1,9 @@
 ---
-name: webship-mr-pr-manager
+name: drupal-mr-manager
 description: The Webship way to open and maintain merge/pull requests on ANY platform — GitHub PRs (gh CLI) and GitLab / git.drupalcode.org MRs (issue forks / glab / API). Covers platform detection, description shape (issue link → notes → Checkpoints last), commit-type titles for drupal.org (drupal.org/node/3586390), AI-policy disclosure, honest checkbox flips, one-issue-one-PR, reuse-vs-new-MR, and the never-tick human-review rule. Use when opening an MR/PR, updating its Checkpoints, syncing a PR description, or getting a branch reviewed.
 ---
 
-# Webship MR/PR Manager
+# Drupal MR Manager
 
 The single gateway for merge requests and pull requests across GitHub and GitLab (git.drupalcode.org). This skill owns the MR/PR lifecycle — the fix itself belongs to the caller. Issue templates come from the **webship-issue-templates** skill; issue creation is delegated to `drupal-issue-manager` (drupal.org node queue), `drupalcode-issue-manager` (GitLab work items) or `github-pr-manager` (github.com).
 

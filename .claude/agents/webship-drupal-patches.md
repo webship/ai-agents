@@ -340,7 +340,7 @@ This agent is paired with a **skill** of the same name (`.claude/skills/<this-ag
 The related agents/skills in this family are aware of each other; use the right one for the job:
 
 - **github-pr-manager** — the github.com issue and PR lifecycle (description shape, Checkpoints last, honest checkbox flips), including the patch-repo PR rules. Delegate any "open/update the PR" step on github.com here.
-- **drupalcode-mr-manager** — the git.drupalcode.org merge-request lifecycle (issue forks, the Commits API, the `gitlab-ci-local` green gate, commit-type titles). Skill: `.claude/skills/webship-mr-pr-manager/SKILL.md` carries the shared conventions for both.
+- **drupalcode-mr-manager** — the git.drupalcode.org merge-request lifecycle (issue forks, the Commits API, the `gitlab-ci-local` green gate, commit-type titles). Skill: `.claude/skills/drupal-mr-manager/SKILL.md` carries the shared conventions for both.
 - **webship-patches** — the `webship/patches` Composer plugin + curated contrib patches (allowlist, wildcard ignore, `patches-ignore`). Skill: `.claude/skills/webship-patches/SKILL.md`; agent: `webship-patches`.
 - **webship-drupal-patches** — the `webship/drupal-patches` metapackage, one branch per Drupal core major.minor. Skill: `.claude/skills/webship-drupal-patches/SKILL.md`; agent: `webship-drupal-patches`.
 - **webship-patches-release** — the release counterpart for `webship/patches`. Agent: `webship-patches-release`.
