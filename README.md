@@ -48,6 +48,14 @@ available to Claude Code.
   (Playwright + Cucumber-js): scaffold, author `.feature` files, run, and report.
 - `webship-ai-agent` — webship-js BDD authoring / running / fixing loop.
 
+**Site templates**
+- `drupal-site-template-creator` — scaffold a new Drupal recipe-based site template end to end: repo,
+  clone-and-rename, branch, tracking issue, README, and the first dev release. Product-neutral, so it
+  works for any recipe-based template, not only the Webship ones.
+- `webship-website-starter-manager` — maintains the shipped `website_starter` template.
+- `webship-starter-template-manager` — maintains the shipped `webship_starter` template.
+- `webship-portal-template-manager` — maintains the shipped `webship_portal` template.
+
 **Workspace tooling** (`webship-workspace-*`) — build, back up, and maintain the folders of the
 `~/workspace` Drupal development workspace: agents, components, demos, dev, docs, forked, libraries, modules,
 products, profiles, projects, recipes, sandboxes, skills, test, themes.
@@ -66,6 +74,10 @@ products, profiles, projects, recipes, sandboxes, skills, test, themes.
 - `webship-js-init`, `webship-js-create`, `webship-js-run`, `webship-js-audit`, `webship-js-steps` —
   the webship-js BDD testing skills (scaffold a suite, author scenarios, run it, audit results, and manage
   step definitions).
+- `drupal-site-template-prove` — what "proven" means for a site template: counted install assertions
+  across both supported bases and all three install paths, not a finished install you looked at.
+- `drupal-site-template-catalog` — the site template catalogue: package, repository, the exact
+  non-interactive build invocation, and the recipes each template applies.
 
 ## Notes
 
