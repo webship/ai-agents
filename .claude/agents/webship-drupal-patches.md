@@ -126,7 +126,7 @@ never reference a raw MR URL (URLs drift, break checksums). Verify the diff star
 not the git.drupalcode.org bot-challenge HTML; if HTML,
 `git diff origin/<target>...<mrBranch> > patches/<file>.patch`.
 
-### Re-roll source of truth + keep the upstream MR mergeable + per-patch split (Rajab's rules)
+### Re-roll source of truth + keep the upstream MR mergeable + per-patch split
 - **Re-roll against the core version the branch actually targets, not the MR head verbatim.** An upstream core MR tracks a rolling dev branch and can sit ahead of the minor you patch. Fetch the MR `.diff` as intent; if hunks are anchored past the target, re-roll only the failing hunks against the target core source, keep passing hunks byte-identical. `git apply --check -p1` all patches together in composer-declared order.
 - **Also update the upstream drupal.org MR to match.** When a re-roll shows upstream drifted, rebase the issue-fork branch onto the LIVE target branch, resolve the same minimal change into the target's *current* file, `git push --force-with-lease` (GitLab saves the old tip as `previous/<branch>/<date>`). Confirm API `merge_status: can_be_merged`, `has_conflicts: false`, `diverged_commits_count: 0`. No unsolicited comment; an already-mergeable MR is verify-only.
 - **One issue + its own PRs per patch change** — never bundle two patches. Each = its own issue + a `patches`-branch file PR + a per-core-branch composer-repoint PR (+ its own `## [Unreleased]` CHANGELOG line). Version-branch PR depends on the file PR.
@@ -307,7 +307,7 @@ Every issue created on drupal.org uses the default issue summary template, updat
 
 ## PATCH TITLE + SHARED-FILE / MULTI-VERSION RULES (webship/patches & webship/drupal-patches)
 
-Two hard rules (Rajab, 2026-07-04) for every patch PR/issue in **webship/patches** and **webship/drupal-patches**:
+Two hard rules (added 2026-07-04) for every patch PR/issue in **webship/patches** and **webship/drupal-patches**:
 
 ### 1. The title carries the FULL Drupal.org issue title — verbatim, no duplication
 Copy the upstream drupal.org issue's exact title into the patch PR/issue title. Do not paraphrase it, do not replace it with the MR commit-type summary, and do not embed a `fix:` / `task:` prefix.

@@ -69,8 +69,13 @@ products, profiles, projects, recipes, sandboxes, skills, test, themes.
 
 ## Notes
 
+- [`.claude/agents/RULES.md`](.claude/agents/RULES.md) is the single source of truth for the rules
+  every agent follows — disclosure, evidence, destructive actions, and what must never appear in
+  public content. Agents point at it rather than restating it.
 - Agents reference credentials by **file path only** (e.g. a git.drupalcode.org token at
   `~/.config/drupalcode/gitlab-token`) — no secrets are stored in this repo.
+- No contributor is hardcoded anywhere: identity resolves at run time, and worked examples use
+  placeholders (`<your-gitlab-username>`) rather than real accounts.
 - Passwords that appear in test fixtures (e.g. `dD.123123ddd`) are throwaway local **DDEV test** credentials.
 - `webship/patches` and `webship/drupal-patches` are renamed continuations of the earlier
   `webship/webship-patches` and `webship/drupal-core-patches` packages: fresh tag lines (`11.0.0` and

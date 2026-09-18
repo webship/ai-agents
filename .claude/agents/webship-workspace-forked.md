@@ -23,7 +23,7 @@ bash cmd-tool-git-change-filemode-to-false.sh <repo_name>
 ## Rules
 
 - This folder is presumably a manual home for forked upstream repos (a fork of a contrib module/theme/distribution the team maintains patches against) — each subdirectory is likely its own git remote pointing at a personal/org fork rather than the canonical drupal.org or GitHub project. Check `git remote -v` in a given checkout before assuming where `git push` would land.
-- Same filemode caveat as every other folder: `core.fileMode false` exists to suppress permission-only diffs left over from the `www-data:rajab` LAMP-era ownership (see the outstanding `chown -R rajab:rajab ~/workspace` follow-up in `~/workspace/CLAUDE.md`).
+- Same filemode caveat as every other folder: `core.fileMode false` exists to suppress permission-only diffs left over from the `www-data:${USER}` LAMP-era ownership (see the outstanding `chown -R ${USER}:${USER} ~/workspace` follow-up in `~/workspace/CLAUDE.md`).
 - If asked to add backup/bulk-clone tooling here, confirm with the user first — mirror the `webship-workspace-libraries` pattern (thin folder, likely intentional).
 
 ## Testing style
