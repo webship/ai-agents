@@ -1,5 +1,5 @@
 ---
-name: webship-11.0.x-release
+name: webship-11-0-x-release
 description: >
   The capstone agent for the WHOLE Webship 11.0.x release workflow on drupal.org / git.drupalcode.org
   (github.com/webship mirrors): the 14 web* component modules, the webtheme theme, the profile

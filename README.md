@@ -17,7 +17,7 @@ available to Claude Code.
 ## Agents
 
 **Release workflow (Drupal ~11.4.0 cycle)**
-- `webship-11.0.x-release` — capstone agent for the whole Webship 11.0.x release workflow (modules, theme,
+- `webship-11-0-x-release` — capstone agent for the whole Webship 11.0.x release workflow (modules, theme,
   profile/distribution rollup, project template).
 - `webship-drupal-module-release` — cut a tag-only release of a single web\* module on drupal.org /
   git.drupalcode.org (+ github mirror).
