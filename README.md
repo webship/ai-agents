@@ -56,6 +56,18 @@ available to Claude Code.
 - `webship-starter-template-manager` — maintains the shipped `webship_starter` template.
 - `webship-portal-template-manager` — maintains the shipped `webship_portal` template.
 
+**Front end & design systems**
+- `drupal-themer` — the master themer. Decides where a change belongs (component, display
+  configuration, theme tokens, or the framework's own classes), then orchestrates the sub-agents
+  below, spawning one component builder per component.
+- `drupal-sdc-component-builder` — authors exactly one Single Directory Component at a time.
+- `drupal-page-assembler` — assembles pages from components that already exist.
+- `ui-suite-uikit-themer` — the themer for the `ui_suite_uikit` theme (UIkit).
+- `webtheme-themer` — the themer for the `webtheme` theme.
+
+  Verification is delegated to `drupal-frontend-render-verifier` and token work to
+  `drupal-design-token-mapper`, rather than duplicated here.
+
 **Workspace tooling** (`webship-workspace-*`) — build, back up, and maintain the folders of the
 `~/workspace` Drupal development workspace: agents, components, demos, dev, docs, forked, libraries, modules,
 products, profiles, projects, recipes, sandboxes, skills, test, themes.
