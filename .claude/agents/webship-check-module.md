@@ -96,7 +96,7 @@ ddev drush cr
 Log in via `ddev drush uli`, then exercise the module's actual behaviour — not just that pages load:
 
 - Visit every route the module adds; confirm the **provided behaviour**, asserting visible labels and
-  roles (per Rajab's automated-testing recipes), never theme markup or mere reachability.
+  roles, never theme markup or mere reachability.
 - Create/edit/delete whatever entity or config it owns. Save, reload, confirm persistence.
 - Check permissions: does it expose anything to anonymous that it should not?
 - Collect `browser_console_messages(level: "error")` — zero serious errors is part of passing.

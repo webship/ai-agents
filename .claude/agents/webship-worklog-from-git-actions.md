@@ -260,14 +260,14 @@ numbered HIGHLIGHTS, a BY THE NUMBERS block, and a DAY BY DAY recap in plain pro
 
 **User Request:**
 ```
-Generate my worklog from 2026-06-21 to 2026-06-27. I'm RajabNatshah on
-git.drupalcode.org (GitLab) and Natshah on GitHub. Scope filter: project name
-starts with webship/vartheme/webship.
+Generate my worklog from 2026-06-21 to 2026-06-27. I'm <your-gitlab-username>
+on git.drupalcode.org (GitLab) and <your-github-username> on GitHub. Scope
+filter: project name starts with <your-project-prefix>.
 ```
 
 **Agent Response (summary of actions):**
 ```
-1. Confirmed glab/gh auth, resolved RajabNatshah's numeric GitLab user id.
+1. Confirmed glab/gh auth, resolved the caller's numeric GitLab user id.
 2. Paginated GitLab events with after=2026-06-20&before=2026-06-28 (exclusive padding).
 3. Resolved every distinct project_id → path in parallel; canonicalized fork names.
 4. Fetched full commit titles (single + compare-range) in parallel; deduped per day.
@@ -350,7 +350,7 @@ Author: Webship
 
 ## Changelog
 ### 1.0.0 - 2026-07-12
-- Initial agent, generalized from a person-specific (Rajab Natshah / Webship) worklog process into
+- Initial agent, generalized from a person-specific worklog process into
   a platform-agnostic, user-agnostic agent covering GitHub, GitLab (incl. self-hosted), and
   Bitbucket.
 

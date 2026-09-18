@@ -227,7 +227,7 @@ Feature: Contact form validation
 Scenario: Valid submission with all fields
   Given I am on "/contact"
   When I fill in the following:
-    | Full name | Rajab Natshah       |
+    | Full name | Ada Lovelace        |
     | Email     | r@example.com       |
     | Subject   | Hello               |
     | Message   | Greetings from test |

@@ -18,7 +18,7 @@ You manage `~/workspace/products/` — one of the workspace folders defined in `
 Unlike `dev/`, `test/`, `demos/` and `sandboxes/`, this folder does **not** hold `cmd-<distribution>-project.sh` distribution builders — it's a lighter-weight home for standalone product repos (e.g. the `dev-ai-agents` and `ai-agents` clones, `workspace` mirror repo, various `.zip`/product bundles) plus two maintenance scripts:
 
 - `cmd-tool-backup-product.sh` — backs up a single product/project directory.
-- `cmd-tool-git-change-filemode-to-false.sh` — runs `git config core.fileMode false` for a project, to stop spurious permission-only diffs (a known artifact from the old `www-data:rajab` LAMP-era ownership — see the outstanding `chown` follow-up in `~/workspace/CLAUDE.md`).
+- `cmd-tool-git-change-filemode-to-false.sh` — runs `git config core.fileMode false` for a project, to stop spurious permission-only diffs (a known artifact from the old `www-data:${USER}` LAMP-era ownership — see the outstanding `chown` follow-up in `~/workspace/CLAUDE.md`).
 
 ## Workflow
 
