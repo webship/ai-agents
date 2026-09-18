@@ -48,6 +48,14 @@ available to Claude Code.
   (Playwright + Cucumber-js): scaffold, author `.feature` files, run, and report.
 - `webship-ai-agent` — webship-js BDD authoring / running / fixing loop.
 
+**Site templates**
+- `drupal-site-template-creator` — scaffold a new Drupal recipe-based site template end to end: repo,
+  clone-and-rename, branch, tracking issue, README, and the first dev release. Product-neutral, so it
+  works for any recipe-based template, not only the Webship ones.
+- `webship-website-starter-manager` — maintains the shipped `website_starter` template.
+- `webship-starter-template-manager` — maintains the shipped `webship_starter` template.
+- `webship-portal-template-manager` — maintains the shipped `webship_portal` template.
+
 **Front end & design systems**
 - `drupal-themer` — the master themer. Decides where a change belongs (component, display
   configuration, theme tokens, or the framework's own classes), then orchestrates the sub-agents
@@ -78,11 +86,20 @@ products, profiles, projects, recipes, sandboxes, skills, test, themes.
 - `webship-js-init`, `webship-js-create`, `webship-js-run`, `webship-js-audit`, `webship-js-steps` —
   the webship-js BDD testing skills (scaffold a suite, author scenarios, run it, audit results, and manage
   step definitions).
+- `drupal-site-template-prove` — what "proven" means for a site template: counted install assertions
+  across both supported bases and all three install paths, not a finished install you looked at.
+- `drupal-site-template-catalog` — the site template catalogue: package, repository, the exact
+  non-interactive build invocation, and the recipes each template applies.
 
 ## Notes
 
+- [`.claude/agents/RULES.md`](.claude/agents/RULES.md) is the single source of truth for the rules
+  every agent follows — disclosure, evidence, destructive actions, and what must never appear in
+  public content. Agents point at it rather than restating it.
 - Agents reference credentials by **file path only** (e.g. a git.drupalcode.org token at
   `~/.config/drupalcode/gitlab-token`) — no secrets are stored in this repo.
+- No contributor is hardcoded anywhere: identity resolves at run time, and worked examples use
+  placeholders (`<your-gitlab-username>`) rather than real accounts.
 - Passwords that appear in test fixtures (e.g. `dD.123123ddd`) are throwaway local **DDEV test** credentials.
 - `webship/patches` and `webship/drupal-patches` are renamed continuations of the earlier
   `webship/webship-patches` and `webship/drupal-core-patches` packages: fresh tag lines (`11.0.0` and

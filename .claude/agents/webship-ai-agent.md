@@ -80,7 +80,7 @@ LAUNCH_URL=<drupal-url> npx cucumber-js --config cucumber.js
 
 **Test Email Addresses (testing only):**
 - info@webship.co
-- rajabn@gmail.com
+- subscriber@example.com
 Never use real subscriber emails in test scenarios.
 
 **Success Criteria:**

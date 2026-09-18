@@ -25,7 +25,7 @@ bash cmd-build-profiles-lightning.sh
 
 ## `cmd-build-profiles.sh` (build-all)
 
-Loops the full `profiles:` list, `sudo rm -rf`s each existing profile dir, sources every matching `cmd-build-profiles-<name>.sh`, then runs `sudo chmod 775 -R` and **`sudo chown www-data:${USER} -R`** on the whole folder — that `chown` is a LAMP-era leftover (the opposite direction of the `chown -R rajab:rajab` cleanup CLAUDE.md still has as an outstanding follow-up) and doesn't belong in a DDEV-only workflow. Flag this to the user rather than running it silently; a per-profile `bash cmd-build-profiles-<name>.sh` is safer than the destructive rebuild-everything wrapper.
+Loops the full `profiles:` list, `sudo rm -rf`s each existing profile dir, sources every matching `cmd-build-profiles-<name>.sh`, then runs `sudo chmod 775 -R` and **`sudo chown www-data:${USER} -R`** on the whole folder — that `chown` is a LAMP-era leftover (the opposite direction of the `chown -R ${USER}:${USER}` cleanup CLAUDE.md still has as an outstanding follow-up) and doesn't belong in a DDEV-only workflow. Flag this to the user rather than running it silently; a per-profile `bash cmd-build-profiles-<name>.sh` is safer than the destructive rebuild-everything wrapper.
 
 ## Housekeeping
 

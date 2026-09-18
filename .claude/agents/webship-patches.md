@@ -224,7 +224,7 @@ A published `.patch` file is **immutable**. When a patch needs re-rolling (new m
 When re-rolling a patch that tracks an upstream drupal.org / git.drupalcode.org MR:
 
 - **Re-roll against the version the build actually installs, not the MR head verbatim.** The upstream MR branch tracks the project's rolling dev branch (e.g. canvas `1.x`) and can sit AHEAD of the release tag Composer resolves (e.g. `1.8.0`, cut from `1.x`). Fetch the MR `.diff` as the *intent*, but if its hunks are anchored past the installed version, manually re-roll only the failing hunks against the installed contrib source (`web/modules/contrib/<pkg>` at the resolved tag), keeping the passing hunks byte-identical. Confirm which branches exist first (GitLab `repository/branches?search=`) — a project may have no `X.Y.x` stable branch at all, only a rolling `1.x` + tags cut from it.
-- **Also update the upstream MR to match (Rajab's rule).** A re-roll means upstream is drifting — don't leave the MR unmergeable. Rebase the issue-fork branch onto the LIVE target branch, resolve the same conflict (the minimal semantic change applied into the target's *current* file — don't paste the release-tag hunk verbatim), and `git push --force-with-lease` to the issue-fork branch (GitLab auto-saves the old tip as `previous/<branch>/<date>`). Verify via API: `merge_status: can_be_merged`, `has_conflicts: false`, `diverged_commits_count: 0`. No unsolicited MR comment. An MR already `can_be_merged` needs no push — verify only.
+- **Also update the upstream MR to match.** A re-roll means upstream is drifting — don't leave the MR unmergeable. Rebase the issue-fork branch onto the LIVE target branch, resolve the same conflict (the minimal semantic change applied into the target's *current* file — don't paste the release-tag hunk verbatim), and `git push --force-with-lease` to the issue-fork branch (GitLab auto-saves the old tip as `previous/<branch>/<date>`). Verify via API: `merge_status: can_be_merged`, `has_conflicts: false`, `diverged_commits_count: 0`. No unsolicited MR comment. An MR already `can_be_merged` needs no push — verify only.
 - **One issue + its own PRs per patch change.** Never bundle two patches' re-rolls into shared PRs. Each patch change = its own issue + a PR adding the dated file to the `patches` branch + a PR repointing that ONE entry (+ its own `## [Unreleased]` CHANGELOG line) on each affected version branch. The version-branch PR depends on the file PR (the canonical `patches`-branch raw URL only exists after the file PR merges).
 
 ## Contrib patch broken by a new Drupal core minor (the 11.4 lesson)
@@ -506,7 +506,7 @@ Every issue created on drupal.org uses the default issue summary template, updat
 
 ## POLICY: no local patches inside module/theme/profile repos — ALL patching lives in webship/patches
 
-Hard rule (from Rajab): **never ship a patch file inside a Webship module, theme, profile, recipe, or the webship_project template — not even for CI/testing only.** No `patches/*.patch` committed in those repos, no `patch -p1 …` / `curl … | patch` step in their `.gitlab-ci.yml`, no local `extra.patches` entry in their composer.json.
+Hard rule: **never ship a patch file inside a Webship module, theme, profile, recipe, or the webship_project template — not even for CI/testing only.** No `patches/*.patch` committed in those repos, no `patch -p1 …` / `curl … | patch` step in their `.gitlab-ci.yml`, no local `extra.patches` entry in their composer.json.
 
 Every dependency patch is managed centrally:
 - **Contrib/dependency patches** → `webship/patches` (branch `11.0.x`). Reference a materialized `.patch` on the `patches` branch, wired in composer.json `extra.patches.[package]`. File the upstream drupal.org issue + issue-fork MR first (the proper way), then land it in webship-patches via PR.
@@ -522,7 +522,7 @@ When reviewing/authoring any module MR: if you see a committed `patches/` file o
 
 ## PATCH TITLE + SHARED-FILE / MULTI-VERSION RULES (webship/patches & webship/drupal-patches)
 
-Two hard rules (Rajab, 2026-07-04) for every patch PR/issue in **webship/patches** and **webship/drupal-patches**:
+Two hard rules (added 2026-07-04) for every patch PR/issue in **webship/patches** and **webship/drupal-patches**:
 
 ### 1. The title carries the FULL Drupal.org issue title — verbatim, no duplication
 Copy the upstream drupal.org issue's exact title into the patch PR/issue title. Do not paraphrase it, do not replace it with the MR commit-type summary, and do not embed a `fix:` / `task:` prefix.
