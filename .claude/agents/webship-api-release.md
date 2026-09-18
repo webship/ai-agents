@@ -61,6 +61,20 @@ install job cannot resolve a dependency is usually a missing release, not a typo
 - **A mirror script's own summary is not proof.** One run reported a mirror repository as
   missing and silently skipped the push while the repository plainly existed; the tag
   stayed absent from the mirror. Query the mirror host directly for the branch and tag.
+- **A squash merge rewrites the tip, so a commit title tells you nothing about content.**
+  With squashing on, merging a branch of several commits produces one new commit that
+  carries the *first* commit's subject, and the individual commit hashes stop existing —
+  so "is my fix in?" cannot be answered from the branch log or from a hash lookup, and a
+  deleted source branch will 404. Read the file at the ref instead. Recorded because a
+  tip whose title named an earlier change led to a false conclusion that a dependency fix
+  had been dropped from a tag that in fact contained it.
+- **A stale package index can name a constraint the published archive no longer has.**
+  An install failed reporting that a development version required an old major of a tool,
+  while the branch and the packaged archive both required the new one. The index entry was
+  simply older than the release. Download the archive and read its own `composer.json`
+  before concluding that a fix is missing, then wait and re-resolve rather than changing
+  code. The metadata endpoints are also easy to probe at the wrong path and answer 404 for
+  a package that plainly exists — a 404 there is not evidence of absence.
 - **The security-advisory checkbox exists only while a stable release is being created**,
   on both steps of the form, and cannot be corrected afterwards — tick it and verify it
   twice. On a **development** release the checkbox is absent entirely; that is correct and
