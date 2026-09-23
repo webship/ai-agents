@@ -7,8 +7,8 @@ description: >
   `webships_project` project template. It owns the release ORDER, the green-CI gate, the
   stable tags, the development releases, the drupal.org release nodes and the mirror
   pushes, and it encodes the gotchas that cost real cycles. It delegates per-project work
-  to webship-webapi-manager, webship-webapi-starter-manager,
-  webship-webships-starter-manager, webship-webships-installer-manager and
+  to webship-webapi-manager, webapi_starter-2-0-x-manager,
+  webships_starter-2-0-x-manager, webship-webships-installer-manager and
   webship-webships-project-manager. Invoke for "release the API line", "release <api
   project> <version>", or "continue the API release".
 model: opus

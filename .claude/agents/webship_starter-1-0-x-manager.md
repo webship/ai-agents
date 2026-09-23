@@ -1,5 +1,5 @@
 ---
-name: webship-starter-template-manager
+name: webship_starter-1-0-x-manager
 description: >
   Use this agent to maintain the shipped `webship_starter` Drupal site template — the
   recipe package and the project template that applies it through the installer

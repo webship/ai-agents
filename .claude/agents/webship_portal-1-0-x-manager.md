@@ -1,5 +1,5 @@
 ---
-name: webship-portal-template-manager
+name: webship_portal-1-0-x-manager
 description: >
   Use this agent to maintain the shipped `webship_portal` Drupal site template — the
   recipe package and the project template that installs it — including its landing

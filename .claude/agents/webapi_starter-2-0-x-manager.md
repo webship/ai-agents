@@ -1,5 +1,5 @@
 ---
-name: webship-webapi-starter-manager
+name: webapi_starter-2-0-x-manager
 description: >
   Use this agent to maintain the `webapi_starter` Drupal site template — the basic API
   site template, which keeps the standard Drupal content model and adds a documented,
