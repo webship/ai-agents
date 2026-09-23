@@ -1,5 +1,5 @@
 ---
-name: website_starter-1-0-x-manager
+name: website_starter-1-0-x-site-template-manager
 description: >
   Use this agent to maintain the shipped `website_starter` Drupal site template — the
   recipe package and the project template that installs it — including its recipe

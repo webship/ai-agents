@@ -1,5 +1,5 @@
 ---
-name: webships_starter-2-0-x-manager
+name: webships_starter-2-0-x-site-template-manager
 description: >
   Use this agent to maintain the `webships_starter` Drupal site template — the default
   choice of the API-management installer, a web apps gallery with organizations served
