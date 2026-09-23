@@ -26,6 +26,9 @@ available to Claude Code.
   github.com (auto-publishes to Packagist via webhook).
 - `webship-drupal-patches-release` — the release counterpart for the `webship/drupal-patches` core-patch
   metapackage (one branch per Drupal core major.minor).
+- `cucumber_starter-1-0-x-release` — cuts releases of the `cucumber_starter` tag-only recipe package on
+  drupal.org / git.drupalcode.org (+ github mirror), `1.0.x` only, release notes in the
+  Added/Changed/Fixed style rather than the flat module/theme bullet form.
 
 **Issues, patches & MR/PR lifecycle**
 - `drupal-issue-manager` — issues in a **drupal.org node queue** (HTML bodies, no write API, browser only).
@@ -52,9 +55,13 @@ available to Claude Code.
 - `drupal-site-template-creator` — scaffold a new Drupal recipe-based site template end to end: repo,
   clone-and-rename, branch, tracking issue, README, and the first dev release. Product-neutral, so it
   works for any recipe-based template, not only the Webship ones.
-- `webship-website-starter-manager` — maintains the shipped `website_starter` template.
-- `webship-starter-template-manager` — maintains the shipped `webship_starter` template.
-- `webship-portal-template-manager` — maintains the shipped `webship_portal` template.
+- `website_starter-1-0-x-manager` — maintains the shipped `website_starter` template.
+- `webship_starter-1-0-x-manager` — maintains the shipped `webship_starter` template.
+- `webship_portal-1-0-x-manager` — maintains the shipped `webship_portal` template.
+- `cucumber_starter-1-0-x-manager` — maintains the shipped `cucumber_starter` template, the default
+  site template of the `cucumber` install profile.
+- `webapi_starter-2-0-x-manager` — maintains the shipped `webapi_starter` template.
+- `webships_starter-2-0-x-manager` — maintains the shipped `webships_starter` template.
 
 **Front end & design systems**
 - `drupal-themer` — the master themer. Decides where a change belongs (component, display
