@@ -1,5 +1,9 @@
 ---
+<<<<<<<< HEAD:.claude/agents/website_starter-1-0-x-site-template-manager.md
+name: website_starter-1-0-x-site-template-manager
+========
 name: website_starter-1-0-x-manager
+>>>>>>>> origin/main:.claude/agents/website_starter-1-0-x-manager.md
 description: >
   Use this agent to maintain the shipped `website_starter` Drupal site template — the
   recipe package and the project template that installs it — including its recipe

@@ -29,6 +29,10 @@ available to Claude Code.
 - `cucumber_starter-1-0-x-release` — cuts releases of the `cucumber_starter` tag-only recipe package on
   drupal.org / git.drupalcode.org (+ github mirror), `1.0.x` only, release notes in the
   Added/Changed/Fixed style rather than the flat module/theme bullet form.
+- `webship_project-12-0-x-release`, `webships_project-12-0-x-release`, `cucumber_project-12-0-x-release`,
+  `website-12-0-x-release` — cut releases of the four tag-only `drupal/*_project` templates, `12.0.x`
+  only, each gated on a green pipeline and Packagist packaging landing before the release node is
+  published.
 
 **Issues, patches & MR/PR lifecycle**
 - `drupal-issue-manager` — issues in a **drupal.org node queue** (HTML bodies, no write API, browser only).
@@ -55,13 +59,25 @@ available to Claude Code.
 - `drupal-site-template-creator` — scaffold a new Drupal recipe-based site template end to end: repo,
   clone-and-rename, branch, tracking issue, README, and the first dev release. Product-neutral, so it
   works for any recipe-based template, not only the Webship ones.
-- `website_starter-1-0-x-manager` — maintains the shipped `website_starter` template.
-- `webship_starter-1-0-x-manager` — maintains the shipped `webship_starter` template.
-- `webship_portal-1-0-x-manager` — maintains the shipped `webship_portal` template.
-- `cucumber_starter-1-0-x-manager` — maintains the shipped `cucumber_starter` template, the default
-  site template of the `cucumber` install profile.
-- `webapi_starter-2-0-x-manager` — maintains the shipped `webapi_starter` template.
-- `webships_starter-2-0-x-manager` — maintains the shipped `webships_starter` template.
+- `website_starter-1-0-x-site-template-manager` — maintains the shipped `website_starter` template.
+- `webship_starter-1-0-x-site-template-manager` — maintains the shipped `webship_starter` template.
+- `webship_portal-1-0-x-site-template-manager` — maintains the shipped `webship_portal` template.
+- `cucumber_starter-1-0-x-site-template-manager` — maintains the shipped `cucumber_starter` template, the
+  default site template of the `cucumber` install profile.
+- `webapi_starter-2-0-x-site-template-manager` — maintains the shipped `webapi_starter` template.
+- `webships_starter-2-0-x-site-template-manager` — maintains the shipped `webships_starter` template.
+
+**Project templates** — `composer create-project` starters (`"type": "project"`), each scaffolding a
+codebase that requires a distribution/installer and (for `website`, `webships_project`) a choice of site
+template. Not recipes, not site templates — see the managers above for that side of the work.
+- `webship_project-12-0-x-manager` / `webship_project-12-0-x-release` — maintain and release
+  `webship_project`, `12.0.x` only.
+- `webships_project-12-0-x-manager` / `webships_project-12-0-x-release` — maintain and release
+  `webships_project`, `12.0.x` only.
+- `cucumber_project-12-0-x-manager` / `cucumber_project-12-0-x-release` — maintain and release
+  `cucumber_project`, `12.0.x` only.
+- `website-12-0-x-manager` / `website-12-0-x-release` — maintain and release the `website` project
+  template, `12.0.x` only.
 
 **Front end & design systems**
 - `drupal-themer` — the master themer. Decides where a change belongs (component, display

@@ -24,7 +24,7 @@ Be precise, verify every step from the API/UI, and never fabricate "done".
 
 For the recipe's content, the recipes it layers and their order, the config actions and
 the webship-js test suite, defer to
-[`cucumber_starter-1-0-x-manager`](cucumber_starter-1-0-x-manager.md) — this agent
+[`cucumber_starter-1-0-x-site-template-manager`](cucumber_starter-1-0-x-site-template-manager.md) — this agent
 owns only the *release* step.
 
 ## Never release without approval

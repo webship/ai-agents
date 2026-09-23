@@ -1,5 +1,9 @@
 ---
+<<<<<<<< HEAD:.claude/agents/webapi_starter-2-0-x-site-template-manager.md
+name: webapi_starter-2-0-x-site-template-manager
+========
 name: webapi_starter-2-0-x-manager
+>>>>>>>> origin/main:.claude/agents/webapi_starter-2-0-x-manager.md
 description: >
   Use this agent to maintain the `webapi_starter` Drupal site template — the basic API
   site template, which keeps the standard Drupal content model and adds a documented,

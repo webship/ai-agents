@@ -1,5 +1,9 @@
 ---
+<<<<<<<< HEAD:.claude/agents/webships_starter-2-0-x-site-template-manager.md
+name: webships_starter-2-0-x-site-template-manager
+========
 name: webships_starter-2-0-x-manager
+>>>>>>>> origin/main:.claude/agents/webships_starter-2-0-x-manager.md
 description: >
   Use this agent to maintain the `webships_starter` Drupal site template — the default
   choice of the API-management installer, a web apps gallery with organizations served

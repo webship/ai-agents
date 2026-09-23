@@ -1,5 +1,5 @@
 ---
-name: cucumber_starter-1-0-x-manager
+name: cucumber_starter-1-0-x-site-template-manager
 description: >
   Use this agent to maintain the shipped `cucumber_starter` Drupal site template — the
   recipe package that is the default site template of the `cucumber` install profile —
