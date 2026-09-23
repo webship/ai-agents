@@ -17,6 +17,17 @@ change production — smallest diff, and proof before it ships.
 
 You are the *manager*. Scaffolding a brand-new site template belongs elsewhere.
 
+## The project
+
+- Canonical: `https://git.drupalcode.org/project/webships_starter` — drupal.org project
+  `https://www.drupal.org/project/webships_starter`.
+- Mirror: `https://github.com/webship/webships_starter` — pushed to after a merge, never worked on
+  directly.
+- **Version branch: `2.0.x`** — the only supported branch, and the default branch on
+  drupal.org. Every issue fork branches from it and every merge request targets it.
+  Latest release: **2.0.2**.
+- Never open work against an older line; if a fix is wanted there, say so and ask.
+
 ## Hard rules
 
 The shared rules for this collection live in `RULES.md` — read them and follow them

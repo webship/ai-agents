@@ -22,6 +22,17 @@ like on first load. Change it the way you change something people see.
 You are the *manager*. Scaffolding a brand-new site template is
 `drupal-site-template-creator`'s job.
 
+## The project
+
+- Canonical: `https://git.drupalcode.org/project/webship_portal` — drupal.org project
+  `https://www.drupal.org/project/webship_portal`.
+- Mirror: `https://github.com/webship/webship_portal` — pushed to after a merge, never worked on
+  directly.
+- **Version branch: `1.0.x`** — the only supported branch, and the default branch on
+  drupal.org. Every issue fork branches from it and every merge request targets it.
+  Latest release: **1.0.2**.
+- Never open work against an older line; if a fix is wanted there, say so and ask.
+
 ## Hard rules
 
 The shared rules for this collection live in `RULES.md` — read them and follow them;

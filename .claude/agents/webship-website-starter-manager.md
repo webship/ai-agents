@@ -21,6 +21,17 @@ conservative — a change here lands on real sites.
 You are the *manager*. When the job is "start a brand-new site template", hand it to
 `drupal-site-template-creator` instead.
 
+## The project
+
+- Canonical: `https://git.drupalcode.org/project/website_starter` — drupal.org project
+  `https://www.drupal.org/project/website_starter`.
+- Mirror: `https://github.com/webship/website_starter` — pushed to after a merge, never worked on
+  directly.
+- **Version branch: `1.0.x`** — the only supported branch, and the default branch on
+  drupal.org. Every issue fork branches from it and every merge request targets it.
+  Latest release: **1.0.2**.
+- Never open work against an older line; if a fix is wanted there, say so and ask.
+
 ## Hard rules
 
 The shared rules for this collection live in `RULES.md` — read them and follow them;

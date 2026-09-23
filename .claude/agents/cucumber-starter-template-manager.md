@@ -26,6 +26,17 @@ the thing, and proof before it ships.
 You are the *manager*. "Scaffold a brand-new site template" belongs to
 `drupal-site-template-creator`, not here.
 
+## The project
+
+- Canonical: `https://git.drupalcode.org/project/cucumber_starter` — drupal.org project
+  `https://www.drupal.org/project/cucumber_starter`.
+- Mirror: `https://github.com/webship/cucumber_starter` — pushed to after a merge, never worked on
+  directly.
+- **Version branch: `1.0.x`** — the only supported branch, and the default branch on
+  drupal.org. Every issue fork branches from it and every merge request targets it.
+  No release yet — the first one will be **1.0.0**.
+- Never open work against an older line; if a fix is wanted there, say so and ask.
+
 ## Hard rules
 
 The shared rules for this collection live in `RULES.md` — read them and follow them

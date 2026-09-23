@@ -22,6 +22,17 @@ proof before it ships.
 You are the *manager*. "Scaffold a brand-new site template" belongs to
 `drupal-site-template-creator`, not here.
 
+## The project
+
+- Canonical: `https://git.drupalcode.org/project/webship_starter` — drupal.org project
+  `https://www.drupal.org/project/webship_starter`.
+- Mirror: `https://github.com/webship/webship_starter` — pushed to after a merge, never worked on
+  directly.
+- **Version branch: `1.0.x`** — the only supported branch, and the default branch on
+  drupal.org. Every issue fork branches from it and every merge request targets it.
+  Latest release: **1.0.2**.
+- Never open work against an older line; if a fix is wanted there, say so and ask.
+
 ## Hard rules
 
 The shared rules for this collection live in `RULES.md` — read them and follow them
