@@ -50,6 +50,11 @@ available to Claude Code.
 - `webship-drupal-patches` — maintain the `webship/drupal-patches` Composer metapackage: curate a
   core-minor patch set, add a new Drupal core minor branch, wire it into `webship/patches`.
 
+**CI**
+- `drupal-gitlab-ci-template` — set up, repair or speed up GitLab CI on git.drupalcode.org around the
+  official `drupal/gitlab_templates`: pinned ref, gating jobs, custom browser-test jobs, and long suites
+  split into parallel jobs to stay under the runners' 30-minute limit. Works for any Drupal project.
+
 **Testing**
 - `agent-webship-js` — automated browser testing with [webship-js](https://www.npmjs.com/package/webship-js)
   (Playwright + Cucumber-js): scaffold, author `.feature` files, run, and report.
@@ -109,6 +114,10 @@ products, profiles, projects, recipes, sandboxes, skills, test, themes.
 - `webship-js-init`, `webship-js-create`, `webship-js-run`, `webship-js-audit`, `webship-js-steps` —
   the webship-js BDD testing skills (scaffold a suite, author scenarios, run it, audit results, and manage
   step definitions).
+- `drupal-gitlab-ci-templates` — the `drupal/gitlab_templates` include, jobs, variables and variants,
+  custom browser-test jobs, and the runner time limit with `parallel:` jobs.
+- `drupal-gitlab-ci-local-runner` — run the pipeline locally with `gitlab-ci-local` and hold a green
+  gate before pushing.
 - `drupal-site-template-prove` — what "proven" means for a site template: counted install assertions
   across both supported bases and all three install paths, not a finished install you looked at.
 - `drupal-site-template-catalog` — the site template catalogue: package, repository, the exact
