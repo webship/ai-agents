@@ -87,6 +87,10 @@ Reads the log: no failing scenario, the runner stopped the job. Notes that the j
 own site, shares the feature files out by scenario count in the test runner's config, dry-runs the
 three parts to show they cover every scenario once, and removes the ignored `timeout:`.
 
+**"A job died with `TerminationByKubelet … node shutdown`."**
+Reads it as infrastructure, not the change: the runner's node went away mid-job. Retries that job
+once and only looks at the code if it fails again the same way.
+
 **"The phpstan job fails on the profile and I can't reproduce it."**
 Reproduces with `gitlab-ci-local phpstan`, finds the job builds its own Drupal root, and that the
 local run analysed a different tree. Points at `.gitlab-ci-local/artifacts/composer`, fixes the real

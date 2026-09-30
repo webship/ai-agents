@@ -92,6 +92,8 @@ template. Not recipes, not site templates — see the managers above for that si
 - `drupal-page-assembler` — assembles pages from components that already exist.
 - `ui-suite-uikit-themer` — the themer for the `ui_suite_uikit` theme (UIkit).
 - `webtheme-themer` — the themer for the `webtheme` theme.
+- `webship-components` — the component metadata (described slots, typed props, stories) shared by
+  `ui_suite_uikit` and `webtheme`, so the Drupal AI component agents can place them from the catalog.
 
   Verification is delegated to `drupal-frontend-render-verifier` and token work to
   `drupal-design-token-mapper`, rather than duplicated here.
