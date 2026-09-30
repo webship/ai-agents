@@ -103,6 +103,35 @@ Drupal work prefer DDEV — `ddev composer`, `ddev drush`, `ddev export-db`, `dd
 — and never a host `composer`, `drush` or `mysql` against a project. `ddev start` accepts `-y`;
 `ddev stop` does not.
 
+## Release and CI lessons
+
+Learnt while releasing the Webship, web* and Cucumber projects (2026-10-01). Release and
+site-template agents point here instead of repeating them.
+
+- **The runner, not `timeout:`, sets the limit.** git.drupalcode.org shared runners stop a job at
+  30 minutes (`execution took longer than 30m0s seconds`) whatever the job's `timeout:` says.
+  Split a long webship-js suite with `parallel: N` and share the feature files out by scenario
+  count in `cucumber.js` (`CI_NODE_INDEX` / `CI_NODE_TOTAL`); see the `drupal-gitlab-ci-template`
+  agent and the `drupal-gitlab-ci-templates` skill. A job killed with
+  `TerminationByKubelet … node shutdown` is infrastructure: retry the job.
+- **Fast-forward merges rewrite SHAs.** On a fast-forward-only project, merging one MR makes the
+  next stacked MR out of date. Call `PUT /projects/:id/merge_requests/:iid/rebase`, then
+  `GET …/merge_requests/:iid?with_merge_status_recheck=true` until it is mergeable. A merge that
+  answers 405 right after the previous one is the same thing: rebase and retry.
+- **drupal.org release node form.** After choosing the tag, press "Next" (`#edit-preview`). A
+  stable release of a project without security advisory coverage then needs the "confirm stable
+  release without security advisory coverage" checkbox before the body form appears.
+- **Issue credit lives on www.drupal.org.** Credit contributors on the www.drupal.org issue page,
+  not on new.drupal.org. If crediting there is not possible, report it; do not work around it.
+- **Downloads time out inside DDEV.** drupal.org and github.com downloads can fail with curl
+  error 28. Run `ddev composer clear-cache` for stale metadata and retry `ddev composer install`
+  up to three times. A failed `create-project` leaves `composer.json` behind: resume with
+  `ddev composer install` rather than starting over.
+- **Keep the machine responsive.** Run shell commands one at a time and keep them light; run at
+  most one or two background jobs or sub-agents at once. More froze the host.
+- **Voice, when asked.** When the user asked for voice narration, say what you are doing, what
+  comes next and the result with `claude-say`.
+
 ## Rules carry their origin
 
 When a rule exists because something went wrong, record what went wrong next to it, dated.
