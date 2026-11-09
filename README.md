@@ -5,6 +5,8 @@ releasing the [Webship](https://www.drupal.org/project/webship) Drupal distribut
 
 Drop the `.claude/` folder into a project (or merge into `~/.claude/`) to make these agents and skills
 available to Claude Code.
+The webship-js agents and skills also read the book in `book/` (see [The book](#the-book)); copy it to
+`<project>/.claude/webship-js-book/` or `~/.claude/webship-js-book/` next to them.
 
 ## Layout
 
@@ -59,6 +61,8 @@ available to Claude Code.
 - `agent-webship-js` — automated browser testing with [webship-js](https://www.npmjs.com/package/webship-js)
   (Playwright + Cucumber-js): scaffold, author `.feature` files, run, and report.
 - `webship-ai-agent` — webship-js BDD authoring / running / fixing loop.
+
+  Both agents, and the `webship-js-*` skills below, read the book in `book/` as their knowledge base.
 
 **Site templates**
 - `drupal-site-template-creator` — scaffold a new Drupal recipe-based site template end to end: repo,
@@ -124,6 +128,26 @@ products, profiles, projects, recipes, sandboxes, skills, test, themes.
   across both supported bases and all three install paths, not a finished install you looked at.
 - `drupal-site-template-catalog` — the site template catalogue: package, repository, the exact
   non-interactive build invocation, and the recipes each template applies.
+
+## The book
+
+The knowledge base of the webship-js agents and skills is the book *Automated Functional Testing
+Recipes* (v1.0.86): 51 chapters and 4 appendices on BDD with webship-js, from Gherkin and the first
+real test suite through forms, waits, modals, tables, authentication and API testing, to custom step
+definitions, the complete step definition reference, web-first assertions, debugging, CI, and patterns
+vs antipatterns.
+
+Its Markdown sources live in [`book/`](book/): `book/README.md` is the table of contents, one file per
+chapter and appendix, and the whole book in one file,
+`book/Automated-Functional-Testing-Recipes-v1.0.86-complete.md`. The files are copied as published and
+are not edited here.
+
+`agent-webship-js`, `webship-ai-agent` and the `webship-js-init`, `webship-js-create`,
+`webship-js-run`, `webship-js-audit` and `webship-js-steps` skills read the table of contents and then
+the chapter that matches the task before writing scenarios or step definitions. They look for the book
+in the project's `.claude/webship-js-book/`, then in `~/.claude/webship-js-book/`, then in `book/` of a
+checkout of this repository, so copy `book/` next to the agents when you install them outside a
+checkout.
 
 ## Notes
 

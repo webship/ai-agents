@@ -62,6 +62,18 @@ https://github.com/webship/webship-js/tree/2.0.x.
    - `tests/features/*.feature` (existing patterns to stay consistent
      with).
 
+5. **The book** *Automated Functional Testing Recipes* (v1.0.86). Look for it in this order and use the first that exists:
+   `.claude/webship-js-book/` in the current project, `~/.claude/webship-js-book/`
+   (copy `book/` there when you merge `.claude/` into your home directory), or
+   `book/` in a checkout of https://github.com/webship/ai-agents. Read
+   `README.md` (the table of contents), then the chapters for this skill:
+
+   - `ch33-complete-step-definition-reference.md`: every step, by category.
+   - `appendix-b-quick-reference.md`: the one-page cheat sheet.
+   - `ch36-web-first-assertions.md`: auto-wait matchers.
+   - `ch34-advanced-selectors.md`: selector phrasings.
+   - `ch17-custom-step-definitions.md`: when no built-in step exists.
+
 Steps below reflect the catalog at the time of writing. **Verify against
 the installed source — skip anything that's not there.** Every step
 supports `I` / `we` pronouns (optional). `the`, `a`, `an` tokens are

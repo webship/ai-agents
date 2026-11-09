@@ -62,6 +62,21 @@ generator.
 - `tests/step-definitions/*.js` — custom steps.
 - Existing `tests/reports/cucumber_report.json` (if previously run).
 
+### 4. The book
+
+The book *Automated Functional Testing Recipes* (v1.0.86). Look for it in this order and use the first that exists:
+`.claude/webship-js-book/` in the current project, `~/.claude/webship-js-book/`
+(copy `book/` there when you merge `.claude/` into your home directory), or
+`book/` in a checkout of https://github.com/webship/ai-agents. Read
+`README.md` (the table of contents), then the chapters for this skill:
+
+- `ch21-when-tests-go-bad.md`: symptom, probable cause, fix.
+- `ch22-debugging-techniques.md`: headed mode, screenshots, traces.
+- `ch44-javascript-and-friendly-errors.md`: JS errors and error pages.
+- `ch24-performance-optimization.md`: slow suites.
+- `ch46-video-recording.md`: video on failure.
+- `ch25-cicd-integration.md`, `ch45-cicd-providers.md`: CI lanes per provider.
+
 ## Instructions
 
 ### 1. Verify install

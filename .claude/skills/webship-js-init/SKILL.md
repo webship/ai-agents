@@ -49,6 +49,19 @@ https://github.com/webship/webship-js/tree/2.0.x.
 - `tests/step-definitions/*.js` — user custom steps.
 - `package.json` — merge, never clobber.
 
+### 4. The book
+
+The book *Automated Functional Testing Recipes* (v1.0.86). Look for it in this order and use the first that exists:
+`.claude/webship-js-book/` in the current project, `~/.claude/webship-js-book/`
+(copy `book/` there when you merge `.claude/` into your home directory), or
+`book/` in a checkout of https://github.com/webship/ai-agents. Read
+`README.md` (the table of contents), then the chapters for this skill:
+
+- `ch02-setting-up-webship-js.md`: install, scaffold, configuration.
+- `ch04-first-real-test-suite.md`: what a first suite looks like.
+- `ch19-organizing-large-test-suite.md`: layout for multi-role suites.
+- `ch25-cicd-integration.md`: wiring the suite into CI.
+
 ## Instructions
 
 ### Path A — plain Node.js (`$target` is a URL)
