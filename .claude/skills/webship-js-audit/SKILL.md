@@ -50,6 +50,18 @@ tests/step-definitions/**/*.js`.
    - `tests/step-definitions/**/*.js` — custom steps to audit.
    - `tests/selectors/*.json` — preset files referenced.
 
+4. **The book** *Automated Functional Testing Recipes* (v1.0.86). Look for it in this order and use the first that exists:
+   `.claude/webship-js-book/` in the current project, `~/.claude/webship-js-book/`
+   (copy `book/` there when you merge `.claude/` into your home directory), or
+   `book/` in a checkout of https://github.com/webship/ai-agents. Read
+   `README.md` (the table of contents), then the chapters for this skill:
+   - `ch50-patterns-vs-antipatterns.md`: the catalogue this audit applies.
+   - `ch20-design-patterns-for-tests.md`, `ch30-best-practices-pro-tips.md`:
+     the patterns to confirm present.
+   - `ch17-custom-step-definitions.md`: what a clean custom step looks like.
+   - `ch21-when-tests-go-bad.md`, `ch23-test-maintenance.md`: smells and
+     their fixes.
+
 ## What this skill audits
 
 ### A. Feature files (`*.feature`)

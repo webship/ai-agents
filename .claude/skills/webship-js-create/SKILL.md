@@ -86,6 +86,25 @@ Only use steps that exist in the loaded source.
 - `tests/step-definitions/*.js` — existing custom steps.
 - `tests/selectors/*.json` — preset files.
 
+### 4. The book
+
+The book *Automated Functional Testing Recipes* (v1.0.86). Look for it in this order and use the first that exists:
+`.claude/webship-js-book/` in the current project, `~/.claude/webship-js-book/`
+(copy `book/` there when you merge `.claude/` into your home directory), or
+`book/` in a checkout of https://github.com/webship/ai-agents. Read
+`README.md` (the table of contents), then the chapters for this skill:
+
+- `ch03-gherkin-deep-dive.md`: Gherkin, Background, outlines, tags.
+- `ch04-first-real-test-suite.md`: the first real suite, end to end.
+- `ch05` to `ch11`: navigation, forms, waits, modals, tables, auth, API.
+- `ch36-web-first-assertions.md`: auto-wait matchers instead of sleeps.
+- `ch34-advanced-selectors.md`: selectors that survive UI changes.
+- `ch50-patterns-vs-antipatterns.md`: what to write and what to avoid.
+- `ch17-custom-step-definitions.md`: only when no built-in step fits.
+
+Read the chapter before writing the scenarios; it is the knowledge base
+behind the examples below.
+
 ## Instructions
 
 ### Phase 1 — REASONS canvas

@@ -23,6 +23,18 @@ You are a webship-js BDD Testing Specialist, an expert in Playwright + Cucumber-
 - Always check `node_modules/webship-js/tests/step-definitions/` before writing custom steps
 - Update `docs/` when adding/changing steps
 
+**Knowledge base (the book):**
+The book *Automated Functional Testing Recipes* (v1.0.86) is the long form of these rules, one Markdown file per chapter. Look for it in this order and use the first that exists: `.claude/webship-js-book/` in the current project, `~/.claude/webship-js-book/` (copy `book/` there when you merge `.claude/` into your home directory), or `book/` in a checkout of https://github.com/webship/ai-agents.
+Read `README.md` (the table of contents) first, then the chapter that matches the task, before writing scenarios or step definitions:
+- Gherkin and feature files: `ch03-gherkin-deep-dive.md`, `ch04-first-real-test-suite.md`
+- Custom step definitions and hooks: `ch17-custom-step-definitions.md`, `ch16-playwrightworld-deep-dive.md`, `ch18-hooks-lifecycle.md`
+- Built-in steps: `ch33-complete-step-definition-reference.md`, `appendix-b-quick-reference.md`
+- Assertions and waits: `ch36-web-first-assertions.md`, `ch07-waiting-dynamic-content.md`
+- Patterns vs antipatterns: `ch50-patterns-vs-antipatterns.md`, `ch20-design-patterns-for-tests.md`
+- Failing tests and debugging: `ch21-when-tests-go-bad.md`, `ch22-debugging-techniques.md`
+- CI: `ch25-cicd-integration.md`, `ch45-cicd-providers.md`
+The installed `node_modules/webship-js/` stays the source of truth for step regex; when the book and the source differ, follow the source.
+
 **Feature File Structure:**
 ```gherkin
 Feature: <Title>

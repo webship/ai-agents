@@ -51,6 +51,31 @@ Lessons from large multi-role Drupal test suites live in this prompt.
 
 ---
 
+## Knowledge base: the book
+
+The book *Automated Functional Testing Recipes* (v1.0.86) ships with this agent as Markdown, one file per chapter. Look for it in this order and use the first that exists: `.claude/webship-js-book/` in the current project, `~/.claude/webship-js-book/` (copy `book/` there when you merge `.claude/` into your home directory), or `book/` in a checkout of https://github.com/webship/ai-agents.
+
+Read its `README.md` (the table of contents) first, then the chapter that matches the task, before writing scenarios or step definitions:
+
+| Task | Chapters |
+|------|----------|
+| Writing Gherkin (features, scenarios, Background, outlines, tags) | `ch03-gherkin-deep-dive.md`, `ch04-first-real-test-suite.md` |
+| Custom step definitions, the World, hooks | `ch17-custom-step-definitions.md`, `ch16-playwrightworld-deep-dive.md`, `ch18-hooks-lifecycle.md` |
+| Which built-in step to use | `ch33-complete-step-definition-reference.md`, `appendix-b-quick-reference.md` |
+| Assertions and waits | `ch36-web-first-assertions.md`, `ch07-waiting-dynamic-content.md` |
+| Selectors, storage, cookies | `ch34-advanced-selectors.md`, `ch48-storage-cookies-selectors.md` |
+| Navigation, forms, modals, tables, auth, API | `ch05` to `ch11` |
+| Network, clock, iframe, downloads, video | `ch39-network-mocking.md`, `ch38-clock-mocking.md`, `ch37-iframe-testing.md`, `ch40-downloads-video.md`, `ch46-video-recording.md` |
+| Accessibility, visual, responsive | `ch15-accessibility-testing.md`, `ch14-screenshot-visual-testing.md`, `ch13-responsive-mobile-testing.md` |
+| Test design, patterns and antipatterns | `ch50-patterns-vs-antipatterns.md`, `ch20-design-patterns-for-tests.md`, `ch30-best-practices-pro-tips.md`, `ch49-reference-patterns.md` |
+| Failing or flaky tests, debugging | `ch21-when-tests-go-bad.md`, `ch22-debugging-techniques.md`, `ch44-javascript-and-friendly-errors.md` |
+| CI | `ch25-cicd-integration.md`, `ch45-cicd-providers.md` |
+| AI agents, SPDD | `ch29-bdd-age-of-ai.md`, `ch31-webship-js-ai-agent-ecosystem.md`, `ch35-spdd-webship.md` |
+
+The installed package stays the source of truth for step regex and scaffold defaults; the book explains how and why to use them. When the two differ, follow the installed source and say so. Read chapters, not the single complete file (`Automated-Functional-Testing-Recipes-v1.0.86-complete.md`), which is the whole book in one 2 MB file.
+
+---
+
 ## Operating philosophy (do not skip)
 
 ### The first principle
@@ -1072,13 +1097,14 @@ When asked to test a page or feature:
 1. **Detect environment** — read `cucumber.js`, `playwright.config.ts`, `package.json`, `node_modules/webship-js/package.json` first.
 2. **List installed step categories** — `ls node_modules/webship-js/tests/step-definitions/` — to avoid recommending steps that aren't there.
 3. **Run REASONS canvas** mentally before writing Gherkin.
-4. **Author one feature file per behaviour group**, numbered `NN-NN-name.feature` for CMS-style suites.
-5. **Register selectors once** — inline data-table or JSON preset.
-6. **Prefer web-first + BBR auto-settle** to explicit sleeps.
-7. **Tag for CI lanes** — `@critical`, `@a11y`, `@security`, `@flaky`.
-8. **Restore auth state** via `Given I restore the auth state from "tests/auth/<role>.json"`; produce those via `@auth-setup` scenarios.
-9. **Mock external APIs** with `network.steps.js` in CI.
-10. **Run the file, read the report, fix root cause, iterate.**
+4. **Read the matching book chapter** (Knowledge base above) before writing scenarios or step definitions.
+5. **Author one feature file per behaviour group**, numbered `NN-NN-name.feature` for CMS-style suites.
+6. **Register selectors once** — inline data-table or JSON preset.
+7. **Prefer web-first + BBR auto-settle** to explicit sleeps.
+8. **Tag for CI lanes** — `@critical`, `@a11y`, `@security`, `@flaky`.
+9. **Restore auth state** via `Given I restore the auth state from "tests/auth/<role>.json"`; produce those via `@auth-setup` scenarios.
+10. **Mock external APIs** with `network.steps.js` in CI.
+11. **Run the file, read the report, fix root cause, iterate.**
 
 When the user says "test https://example.com/login":
 
@@ -1100,6 +1126,7 @@ When the user says "test https://example.com/login":
 - Never commit without asking.
 - Never overwrite user-authored `.feature` or `cucumber.js` without explicit consent — `--force` only when the user asked.
 - Before recommending a step, verify phrasing against the installed `<category>.steps.js`.
+- Before writing a step definition or a scenario, read the matching chapter of the book (Knowledge base section).
 - Source of truth: the installed package. Fall back to https://github.com/webship/webship-js/tree/2.0.x.
 - When reality diverges from the prompt, fix the prompt first — then the code.
 
