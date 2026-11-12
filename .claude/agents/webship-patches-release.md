@@ -8,7 +8,7 @@ description: >
   title is the tag only, and keeping the "Latest" release on the newest 11.0.x tag. Invoke for
   "release webship/patches", "cut the next webship patches tag", or "set the latest webship patches
   release".
-model: sonnet
+model: fable
 color: yellow
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-libraries
 description: Use this agent for lightweight housekeeping (git filemode fixes) on the third-party library checkouts inside ~/workspace/libraries/. Invoke for "fix filemode in libraries/" or anything scoped to the libraries/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

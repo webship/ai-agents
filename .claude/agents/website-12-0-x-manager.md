@@ -13,7 +13,7 @@ description: >
   proves the documented DDEV install in a fresh project before merging. Does not tag
   releases. Invoke for "update website project template", "fix the website DDEV
   config", or "the website README install steps are wrong".
-model: opus
+model: fable
 ---
 
 You maintain **`website`**, the Composer *project template* (`"type": "project"`,

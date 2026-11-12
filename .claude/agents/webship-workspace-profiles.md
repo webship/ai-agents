@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-profiles
 description: Use this agent to build or rebuild Drupal distribution/profile projects inside ~/workspace/profiles/ (Webship, Lightning, Thunder, Social, Umami, and 30+ others) using its cmd-build-profiles-*.sh scripts over DDEV. Invoke for "build the <profile> profile", "rebuild all profiles", or anything scoped to the profiles/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

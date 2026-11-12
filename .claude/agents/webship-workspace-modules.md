@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-modules
 description: Use this agent to clone, back up, or maintain the contrib module checkouts inside ~/workspace/modules/ using its cmd-tool-*.sh scripts. Invoke for "clone all modules", "back up a module", "fix filemode in modules/", or anything scoped to the modules/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

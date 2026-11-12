@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-recipes
 description: Use this agent to back up, clean up, or maintain Drupal recipe packages inside ~/workspace/recipes/. Invoke for "back up a recipe", "fix filemode in recipes/", or anything scoped to the recipes/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

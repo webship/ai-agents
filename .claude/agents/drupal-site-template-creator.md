@@ -12,7 +12,7 @@ description: >
   commands, stopping for human approval before any release. Invoke for "create a
   new Drupal site template", "scaffold a recipe-based distribution", or "start a
   new drupal-recipe package".
-model: opus
+model: fable
 tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, Skill
 ---
 

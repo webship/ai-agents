@@ -9,7 +9,7 @@ description: >
   webhook, and keeping the "Latest" release on the newest 11.4.x tag. Invoke for "release
   webship/drupal-patches", "cut the next drupal-patches tag", or "set the latest drupal-patches
   release".
-model: sonnet
+model: fable
 color: yellow
 ---
 

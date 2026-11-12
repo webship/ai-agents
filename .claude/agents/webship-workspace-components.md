@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-components
 description: Use this agent to back up, clean up, or maintain reusable SDC/component library repos inside ~/workspace/components/. Invoke for "back up a components repo", "fix filemode in components/", or anything scoped to the components/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

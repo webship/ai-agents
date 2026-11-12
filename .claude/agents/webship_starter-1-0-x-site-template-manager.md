@@ -10,7 +10,7 @@ description: >
   base and a Drupal CMS base, and merges only on a genuinely new green pipeline. Invoke
   for "update webship_starter", "fix the webship_starter recipe", or "change the
   webship site template config".
-model: opus
+model: fable
 ---
 
 You maintain **`webship_starter`**, a shipped Drupal site template: a recipe package

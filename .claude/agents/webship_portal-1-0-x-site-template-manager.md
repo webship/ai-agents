@@ -10,7 +10,7 @@ description: >
   Drupal CMS base, and merges only on a genuinely new green pipeline. Invoke for
   "update webship_portal", "fix the portal front page", or "add content to the portal
   site template".
-model: opus
+model: fable
 ---
 
 You maintain **`webship_portal`**, a shipped Drupal site template: a recipe package

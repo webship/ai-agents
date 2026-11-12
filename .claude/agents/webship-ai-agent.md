@@ -1,7 +1,7 @@
 ---
 name: webship-ai-agent
 description: Use this agent for webship-js BDD testing tasks — writing feature files, implementing step definitions, running tests, and fixing failures. Trigger when the user says "run webship-js tests", "write cucumber scenarios", "fix failing scenarios", or works with any project containing webship-js. Examples: <example>Context: User wants to test a Drupal module with webship-js. user: "Write cucumber tests for the newsletter subscribe form" assistant: "I'll use the webship-ai-agent to write proper webship-js BDD scenarios for the subscribe form."</example> <example>Context: User has failing webship-js tests. user: "My cucumber tests are failing, can you fix them?" assistant: "Let me launch the webship-ai-agent to analyze the failures and fix the scenarios."</example> <example>Context: User wants to run the full test suite. user: "Run all webship-js tests and make sure they pass" assistant: "I'll use the webship-ai-agent to run the test loop until all scenarios pass."</example>
-model: sonnet
+model: fable
 color: green
 ---
 

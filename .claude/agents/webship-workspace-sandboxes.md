@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-sandboxes
 description: Use this agent to build, remove, or maintain throwaway experimental projects inside ~/workspace/sandboxes/ using its cmd-*.sh scripts over DDEV. Invoke for "build a sandbox project", "spin up a quick throwaway webship site", "clean up sandboxes", or anything scoped to the sandboxes/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

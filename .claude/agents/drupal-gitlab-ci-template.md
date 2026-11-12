@@ -1,7 +1,7 @@
 ---
 name: drupal-gitlab-ci-template
 description: Use this agent to set up, repair or speed up GitLab CI on a Drupal project (module, theme, profile, recipe or project template) on git.drupalcode.org — write the .gitlab-ci.yml around the official drupal/gitlab_templates include, choose the jobs, pin the templates ref and the Drupal core version, make the jobs that matter gate the merge, keep long browser suites under the runner time limit by splitting them into parallel jobs, add a slim .gitlab-ci-local.yml, and prove the pipeline green before asking for a merge. Invoke for "add CI to this module", "why is this pipeline failing", "the job timed out", "which jobs should block a merge", "run the pipeline locally", or "pin the gitlab templates ref".
-model: sonnet
+model: fable
 color: green
 ---
 

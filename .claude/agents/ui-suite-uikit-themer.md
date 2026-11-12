@@ -10,7 +10,7 @@ description: >
   agents that own them, and reports what changed. Invoke for "theme this in UI
   Suite UIkit", "add a UIkit component", or "why does this UIkit page look
   wrong".
-model: opus
+model: fable
 tools: Agent, Bash, Read, Write, Edit, Glob, Grep, WebFetch
 ---
 

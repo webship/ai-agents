@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-agents
 description: Use this agent to back up, clean up, or maintain AI agent definition repos inside ~/workspace/agents/ (e.g. dev-ai-agents, ai-agents style clones). Invoke for "back up an agents repo", "fix filemode in agents/", or anything scoped to the agents/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

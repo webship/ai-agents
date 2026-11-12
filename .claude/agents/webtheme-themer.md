@@ -9,7 +9,7 @@ description: >
   values, and delegates component authoring and browser proof to the agents that
   own them. Invoke for "theme this in webtheme", "add a webtheme component", or
   "why does this webtheme page look wrong".
-model: opus
+model: fable
 tools: Agent, Bash, Read, Write, Edit, Glob, Grep, WebFetch
 ---
 

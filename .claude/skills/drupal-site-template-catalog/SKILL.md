@@ -1,7 +1,7 @@
 ---
 name: drupal-site-template-catalog
 description: Maintains the catalogue of available Drupal site templates — a markdown table mapping each template to its Composer package, repository, exact non-interactive build/install invocation, and the recipes it applies — and defines the four-step procedure for adding a new template to it. Use when asked "what site templates are available", "which template should I build", "how do I install template X", "add this template to the catalogue", "list the site templates", or when a new recipe-based site template is published and needs to become discoverable.
-model: opus
+model: fable
 ---
 
 # Drupal Site Template Catalogue

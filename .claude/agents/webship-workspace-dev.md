@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-dev
 description: Use this agent to build, rebuild, remove, or maintain distribution projects inside ~/workspace/dev/ (Webship, Drupal CMS, plain Drupal core) using its cmd-*.sh scripts over DDEV. Invoke for "build a dev project", "spin up a webship site in dev", "remove a dev project", "update all dev projects", or anything scoped to the dev/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

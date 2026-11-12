@@ -10,7 +10,7 @@ description: >
   `drupalcode-issue-manager` or `drupal-issue-manager`. Invoke for "open a GitHub PR", "file a GitHub
   issue", "update the checkpoints on the PR", or "get this branch reviewed".
 tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch
-model: sonnet
+model: fable
 color: purple
 ---
 

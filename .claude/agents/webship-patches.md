@@ -1,7 +1,7 @@
 ---
 name: webship-patches
 description: Use this agent to help with Webship patches management — installing and configuring the webship/patches Composer plugin (github.com/webship/patches), applying curated patches for Webship dependencies, creating custom patches, handling patch failures, and maintaining patch compatibility for the supported Webship line (11.0.x on Drupal core ~11.4.0). Drupal core patches live in the sibling webship/drupal-patches metapackage.
-model: sonnet
+model: fable
 color: yellow
 ---
 

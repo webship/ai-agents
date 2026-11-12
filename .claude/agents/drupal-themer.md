@@ -10,7 +10,7 @@ description: >
   verifier for proof, a token mapper for design values. Invoke for "theme this
   design", "build these components", "why does this look wrong", or "restyle the
   site".
-model: opus
+model: fable
 tools: Agent, Bash, Read, Write, Edit, Glob, Grep, WebFetch
 ---
 

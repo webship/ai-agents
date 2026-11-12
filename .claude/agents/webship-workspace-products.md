@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-products
 description: Use this agent to build, back up, or maintain projects inside ~/workspace/products/ using its cmd-*.sh scripts and the DDEV-only workflow. Invoke for "build a product project", "back up a product", "fix filemode in products/", or anything scoped to the products/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

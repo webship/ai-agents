@@ -9,7 +9,7 @@ description: >
   releases unasked. It works through an issue and a merge request, and merges only on a
   genuinely new green pipeline. Invoke for "update webapi", "fix the webapi recipe", or
   "change the API settings form".
-model: opus
+model: fable
 ---
 
 You maintain **`webapi`**, a shipped Drupal module (`"type": "drupal-module"`) whose job

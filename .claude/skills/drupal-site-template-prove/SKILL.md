@@ -1,7 +1,7 @@
 ---
 name: drupal-site-template-prove
 description: Proves that a Drupal recipe-based site template installs cleanly, on both a plain Drupal recipe-project base and a Drupal CMS base, across all three install paths (non-interactive drush site:install, the browser installer picker, and the packaged release pulled from a Composer requirement), using counted assertions for modules, themes, blocks, content types, roles, and a zero-error watchdog. Use when asked to "prove the site template installs", "verify the template on Drupal CMS", "test the install profile end to end", "check the release installs from Composer", "run the install proof", or before tagging any site-template release.
-model: opus
+model: fable
 ---
 
 # Prove a Drupal Site Template Installs

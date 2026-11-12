@@ -8,7 +8,7 @@ description: >
   the site templates themselves (each has its own manager) and does not tag stable
   releases unasked. Invoke for "update the webships profile", "change the installer
   steps", or "fix the webships install list".
-model: opus
+model: fable
 ---
 
 You maintain **`webships`**, a Drupal installation profile (`"type": "drupal-profile"`)

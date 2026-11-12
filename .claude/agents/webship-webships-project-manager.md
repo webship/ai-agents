@@ -8,7 +8,7 @@ description: >
   does not maintain the profile or the site templates (each has its own manager) and does
   not tag stable releases unasked. Invoke for "update the webships project template",
   "fix its composer constraints", or "change what the project ships".
-model: opus
+model: fable
 ---
 
 You maintain **`webships_project`**, a Composer project template (`"type": "project"`):

@@ -10,7 +10,7 @@ description: >
   "build the card component", "add a variant prop to this SDC", or "turn this
   design element into a component". Other agents should delegate single-component
   authoring here.
-model: opus
+model: fable
 tools: Read, Write, Edit, Glob, Grep
 ---
 

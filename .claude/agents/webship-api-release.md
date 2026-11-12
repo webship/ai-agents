@@ -11,7 +11,7 @@ description: >
   webships_starter-2-0-x-site-template-manager, webship-webships-installer-manager and
   webship-webships-project-manager. Invoke for "release the API line", "release <api
   project> <version>", or "continue the API release".
-model: opus
+model: fable
 tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, mcp__playwright__browser_navigate, mcp__playwright__browser_evaluate, mcp__playwright__browser_click, mcp__playwright__browser_snapshot, mcp__playwright__browser_wait_for, mcp__playwright__browser_tabs
 ---
 

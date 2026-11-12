@@ -1,7 +1,7 @@
 ---
 name: webship-components
 description: Use this agent for the Webship SDC components of ui_suite_uikit and webtheme — adding a component, fixing its metadata, describing slots and props, writing stories, and making the components usable by the Drupal AI component agents. Trigger when the user says "add a component", "describe the slots", "the AI does not find this component", "check the component catalog", "fix the component metadata", or edits `components/<id>/<id>.component.yml`. Examples: <example>Context: A slot has no description. user: "The AI keeps putting the wrong thing in the card footer" assistant: "I'll use the webship-components agent to read the card component and describe its slots, so the catalog tells the agent what the footer is for."</example> <example>Context: A new component. user: "Add a UIkit notification component to the theme" assistant: "Let me launch the webship-components agent to add the component with its variants, typed props, described slots and a story."</example> <example>Context: AI awareness. user: "Make our components visible to the Drupal AI agents" assistant: "I'll use the webship-components agent: the AI reads the component catalog at run time, so this is about the metadata in each component.yml."</example>
-model: sonnet
+model: fable
 color: blue
 ---
 

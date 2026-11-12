@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-demos
 description: Use this agent to build, remove, or maintain demo distribution projects inside ~/workspace/demos/ using its cmd-*.sh scripts over DDEV. Invoke for "build a demo project", "spin up a webship demo", "remove a demo", or anything scoped to the demos/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read
