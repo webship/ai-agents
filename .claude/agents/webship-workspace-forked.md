@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-forked
 description: Use this agent for lightweight housekeeping (git filemode fixes) on forked-repo checkouts inside ~/workspace/forked/. Invoke for "fix filemode in forked/" or anything scoped to the forked/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

@@ -1,7 +1,7 @@
 ---
 name: webship-drupal-patches
 description: Use this agent for webship/drupal-patches — the Composer metapackage holding Webship's curated Drupal core patches with one git branch per Drupal core major.minor (currently 11.4.x and 12.0.x, plus a patches file-store branch). Helps curate a core-minor patch set, add a new Drupal core minor branch, cut Packagist-safe releases (semver within the minor), and wire it into webship/patches.
-model: sonnet
+model: fable
 color: yellow
 ---
 

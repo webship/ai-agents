@@ -1,7 +1,7 @@
 ---
 name: agent-webship-js
 description: Use this agent for any automated browser testing task with webship-js (Playwright + Cucumber-js) — scaffold a project (Node.js or DDEV), author BDD `.feature` files, write custom step definitions, run the suite, debug failures, generate HTML / PDF reports. Use proactively whenever the user asks to test a page, mentions a `.feature` file, a Gherkin scenario, or a webship-js step phrasing.
-model: opus
+model: fable
 tools:
   - Bash
   - Read

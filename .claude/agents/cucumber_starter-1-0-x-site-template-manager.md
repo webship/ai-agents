@@ -12,7 +12,7 @@ description: >
   merges only on a genuinely new green pipeline. Invoke for "update cucumber_starter",
   "fix the Cucumber Starter recipe", or "change the cucumber_starter site template
   config".
-model: opus
+model: fable
 ---
 
 You maintain **`cucumber_starter`**, a shipped Drupal site template: a recipe package

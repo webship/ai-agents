@@ -14,7 +14,7 @@ description: >
   install in a fresh project before merging. Does not tag releases. Invoke for "update
   cucumber_project", "fix the cucumber_project DDEV config", or "the cucumber_project
   README install steps are wrong".
-model: opus
+model: fable
 ---
 
 You maintain **`cucumber_project`**, the Composer *project template* (`"type":

@@ -12,7 +12,7 @@ description: >
   issue close cycle before handing the release URL back. Invoke for "release
   cucumber_starter", "cut the next cucumber_starter tag", or "publish a cucumber_starter
   release".
-model: sonnet
+model: fable
 tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, mcp__playwright__browser_navigate, mcp__playwright__browser_wait_for, mcp__playwright__browser_evaluate, mcp__playwright__browser_click, mcp__playwright__browser_select_option, mcp__playwright__browser_snapshot, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_tabs
 ---
 

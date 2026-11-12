@@ -10,7 +10,7 @@ description: >
   in a browser. Invoke for "assemble the landing page", "wire these components
   into the node display", or "lay out this template". Other agents should
   delegate page composition here.
-model: opus
+model: fable
 tools: Bash, Read, Grep, mcp__playwright__browser_navigate, mcp__playwright__browser_snapshot, mcp__playwright__browser_evaluate, mcp__playwright__browser_console_messages, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_resize
 ---
 

@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-themes
 description: Use this agent to build or install Drupal themes (300+ contrib theme names, front-end and back-end/admin) inside ~/workspace/themes/ using its cmd-*.sh scripts. IMPORTANT — these scripts still use raw host composer and sudo chown, not yet converted to DDEV; flag that before running. Invoke for "build a theme", "install the admin theme", "build all front-end themes", or anything scoped to the themes/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

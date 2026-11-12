@@ -7,7 +7,7 @@ description: >
   scaffold new site templates, does not modify sibling site templates, and does not tag
   stable releases unasked. Invoke for "update webapi_starter", "fix its recipe", or
   "change the basic API template".
-model: opus
+model: fable
 ---
 
 You maintain **`webapi_starter`**, a shipped Drupal site template: a recipe package

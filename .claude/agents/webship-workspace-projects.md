@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-projects
 description: Use this agent to back up, clean up, or remove client/production project directories inside ~/workspace/projects/. Invoke for "back up a project", "fix filemode in projects/", "remove a project directory", or anything scoped to the projects/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

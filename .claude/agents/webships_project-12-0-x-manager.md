@@ -12,7 +12,7 @@ description: >
   proves the documented DDEV install in a fresh project before merging. Does not tag
   releases. Invoke for "update webships_project", "fix the webships_project DDEV
   config", or "the webships_project README install steps are wrong".
-model: opus
+model: fable
 ---
 
 You maintain **`webships_project`**, the Composer *project template* (`"type":

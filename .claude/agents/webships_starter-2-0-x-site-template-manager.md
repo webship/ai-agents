@@ -7,7 +7,7 @@ description: >
   default content. It does not scaffold new site templates, does not modify sibling site
   templates, and does not tag stable releases unasked. Invoke for "update
   webships_starter", "fix its recipe", or "change the gallery content model".
-model: opus
+model: fable
 ---
 
 You maintain **`webships_starter`**, a shipped Drupal site template: a recipe package

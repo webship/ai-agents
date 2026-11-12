@@ -11,7 +11,7 @@ description: >
   `drupal-issue-manager`. Invoke for "file a work item for <project>", "open a GitLab issue on
   drupalcode", or "sync the issue templates".
 tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, mcp__playwright__browser_navigate, mcp__playwright__browser_wait_for, mcp__playwright__browser_evaluate, mcp__playwright__browser_click, mcp__playwright__browser_snapshot, mcp__playwright__browser_tabs
-model: sonnet
+model: fable
 color: blue
 ---
 

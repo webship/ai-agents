@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-skills
 description: Use this agent to back up, clean up, or maintain AI skill definition repos inside ~/workspace/skills/. Invoke for "back up a skills repo", "fix filemode in skills/", or anything scoped to the skills/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

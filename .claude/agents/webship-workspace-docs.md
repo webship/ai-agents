@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-docs
 description: Use this agent to back up, clean up, or maintain documentation project repos inside ~/workspace/docs/. Invoke for "back up a docs project", "fix filemode in docs/", or anything scoped to the docs/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read

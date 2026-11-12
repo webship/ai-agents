@@ -10,7 +10,7 @@ description: >
   a plain Drupal base and a Drupal CMS base, and gates every push on a genuinely new
   green pipeline. Invoke for "update website_starter", "fix the website_starter
   recipe", or "add config to the website site template".
-model: opus
+model: fable
 ---
 
 You maintain **`website_starter`**, a shipped Drupal site template: a recipe package

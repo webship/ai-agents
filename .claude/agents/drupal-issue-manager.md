@@ -11,7 +11,7 @@ description: >
   drupal.org issue", "update the issue summary", "flip the remaining tasks marks", or "set the
   issue status".
 tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, mcp__playwright__browser_navigate, mcp__playwright__browser_wait_for, mcp__playwright__browser_evaluate, mcp__playwright__browser_click, mcp__playwright__browser_type, mcp__playwright__browser_select_option, mcp__playwright__browser_snapshot, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_tabs
-model: sonnet
+model: fable
 color: blue
 ---
 

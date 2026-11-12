@@ -11,7 +11,7 @@ description: >
   the issue close cycle before handing the release URL back. Invoke for "release
   website", "cut the next website project template tag", or "publish a website 12.0.x
   release".
-model: sonnet
+model: fable
 tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, mcp__playwright__browser_navigate, mcp__playwright__browser_wait_for, mcp__playwright__browser_evaluate, mcp__playwright__browser_click, mcp__playwright__browser_select_option, mcp__playwright__browser_snapshot, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_tabs
 ---
 

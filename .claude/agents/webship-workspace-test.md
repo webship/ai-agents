@@ -1,7 +1,7 @@
 ---
 name: webship-workspace-test
 description: Use this agent to build, test, remove, or maintain distribution projects inside ~/workspace/test/ using its cmd-*.sh and cmd-automated-testing-*.sh scripts over DDEV. Invoke for "build a test-workspace project", "run automated tests against a test build", "remove a test project", or anything scoped to the test/ workspace folder.
-model: sonnet
+model: fable
 tools:
   - Bash
   - Read
