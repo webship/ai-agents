@@ -62,3 +62,10 @@ still exists is never touched, even when it is stopped.
 ## Testing style
 
 When exercising the workspace dashboard (https://workspace.ddev.site) or its AI assistant, phrase test inputs the way a real person would type them — natural, casual, sometimes imprecise ("can you back up my d114test site please", "what's running?", "make me a drupal 11 site called blog1") — not robotic command-like strings. Real users don't write API calls; tests should prove the system understands people.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

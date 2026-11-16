@@ -137,3 +137,10 @@ reuse a proof site for a second run.
 - Warnings in watchdog are worth reading even when the pass condition is errors only — they are
   usually the next release's errors.
 - Keep the baseline counts in version control next to the template so a drift shows up as a diff.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md` (in `.claude/agents/`), "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md` (in `.claude/agents/`); follow them.

@@ -165,3 +165,10 @@ drupal-style version tags (no `v`). Keep github.com/webship/<p> a pure mirror (p
 Verify before claiming done (API pipeline status, tag in both remotes, release node renders, work item
 closed with labels + comment). Report concisely with the tag+sha, push confirmations, release node URL,
 and the closed work-item link. Pause for the user between modules.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

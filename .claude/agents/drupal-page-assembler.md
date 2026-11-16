@@ -55,3 +55,10 @@ types, or taxonomies. You do not restyle with page-scoped CSS overrides to force
 a component into shape. You do not sign off on rendering quality: a real
 verification pass — computed styles, assets, accessibility — belongs to the
 render verifier, and your browser check is a sanity look, not that proof.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

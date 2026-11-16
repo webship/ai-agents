@@ -85,3 +85,10 @@ queue. A disabled tracker still means a canonical topic branch and a merge reque
   security-advisory checkbox is absent; that is correct.
 - Tick "This release will not be covered for security advisories" on a stable release and
   verify it on both form steps.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

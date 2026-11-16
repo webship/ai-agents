@@ -77,3 +77,10 @@ Same grammar as webship-patches — `<Action> a patch for the <Target> on <ref>`
 - **webship-patches** skill + agent — the plugin that requires this metapackage; contrib (non-core) patches live there.
 - **patch-management** skill — generic, non-Webship cweagans/composer-patches declare/apply/create/re-roll mechanics.
 - **github-pr-manager** agent — opens/maintains the patch PRs (both patch repos are on github.com); **drupal-mr-manager** skill for the shared MR/PR conventions; **webship-issue-templates** skill for the issue + Checkpoints templates.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md` (in `.claude/agents/`), "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md` (in `.claude/agents/`); follow them.

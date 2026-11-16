@@ -211,4 +211,11 @@ created there; the release of record is the drupal.org node.
 Verify before claiming done (API pipeline status including the `recipe` job, tag in both
 remotes, release node renders with the right notes, issue(s) closed). Report concisely:
 the tag + sha, push confirmations, the release node URL, and the closed issue link(s).
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.
 </content>

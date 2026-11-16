@@ -120,3 +120,10 @@ working site; the proof is what keeps that promise honest.
   first adopting a particular distribution.
 - A catalogue entry whose proof is failing is worse than no entry. Remove or mark the row rather
   than leaving a build that does not work.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md` (in `.claude/agents/`), "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md` (in `.claude/agents/`); follow them.

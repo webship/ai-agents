@@ -222,3 +222,10 @@ git apply --check patches/<file>.patch
 - Skill: `webship-drupal-patches` — the sibling Drupal-core-patches metapackage.
 - [Webship Patches repo](https://github.com/webship/patches)
 - [cweagans/composer-patches](https://github.com/cweagans/composer-patches)
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md` (in `.claude/agents/`), "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md` (in `.claude/agents/`); follow them.

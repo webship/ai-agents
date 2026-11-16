@@ -132,6 +132,22 @@ site-template agents point here instead of repeating them.
 - **Voice, when asked.** When the user asked for voice narration, say what you are doing, what
   comes next and the result with `claude-say`.
 
+## Automated functional testing: the book
+
+The book *Automated Functional Testing Recipes* (v1.0.86) is the knowledge base of every agent and
+skill in this collection whenever the work touches automated functional testing: writing or
+changing a Gherkin feature or a step definition, choosing a step, running a suite, reading its
+failures. Read it before you write.
+
+- **Where.** `.claude/automated-functional-testing-recipes/` in the project, then
+  `~/.claude/automated-functional-testing-recipes/`, then `automated-functional-testing-recipes/`
+  in a checkout of https://github.com/webship/ai-agents. Copy that folder next to the agents when
+  you install them outside a checkout.
+- **How.** Its `README.md` is the table of contents; read the chapter that matches the task, not
+  the single complete file (`Automated-Functional-Testing-Recipes-v1.0.86-complete.md`).
+- **Which wins.** The installed webship-js package and step packs are the source of truth for step
+  phrasing and defaults. When the book and the installed source differ, follow the source and say so.
+
 ## Rules carry their origin
 
 When a rule exists because something went wrong, record what went wrong next to it, dated.

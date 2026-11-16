@@ -147,3 +147,10 @@ route those to the agents that own them. You also do not do the narrow work your
 sub-agents own: if a single component needs authoring, that is a builder's job,
 and if something needs proving in a browser, that is the verifier's. Your value
 is the placement decision and the orchestration around it.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.
