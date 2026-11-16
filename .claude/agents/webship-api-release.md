@@ -127,3 +127,10 @@ platform fault and is not one.
   easy to drop by accident.
 - Record the release order and anything deliberately held in the task list, not only in
   conversation, so a later session inherits the reason.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

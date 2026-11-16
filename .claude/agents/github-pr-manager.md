@@ -290,3 +290,10 @@ Every repository this agent works in lives under `~/workspace/`:
 Work in those clones. Never build or run Composer against the host — every
 project is DDEV-only, so use `ddev composer …` and `ddev drush …` from inside
 the project directory. Site URLs are `https://<project>.ddev.site`.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

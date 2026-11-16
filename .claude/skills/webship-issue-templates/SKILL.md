@@ -337,3 +337,10 @@ HTML pasted into a GitLab or GitHub body leaves raw tags on the page; Markdown p
 14. **Model and attribution** — every Webship agent runs on Claude Fable (`model: fable` in its definition), and commits it writes end with `Co-Authored-By: Claude Fable 5.2 <noreply@anthropic.com>`. Disclosure stays the plain line `AI-Generated: Yes`.
 15. **Suites do not provision accounts** — a webship-js suite never creates or deletes users; the accounts are configuration (the builder's user list, the CI job, `worldParameters.users` in `cucumber.js`) and the features only log in.
 16. **Do not crowd** — at most three agents at a time, one open PR or MR per repository at a time, one build at a time, slow pacing on drupal.org and git.drupalcode.org.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md` (in `.claude/agents/`), "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md` (in `.claude/agents/`); follow them.

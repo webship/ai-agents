@@ -378,3 +378,10 @@ e.g. `AI-Generated: Yes (Used Claude Code to draft the worklog report)`.
 The checklist is not reproduced here. Copy the Checkpoints checklist out of the
 **`webship-issue-templates`** skill (`.claude/skills/webship-issue-templates/SKILL.md`) verbatim,
 ticking only what is genuinely done and never `Reviewed by a human` or `Code review by maintainers`.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

@@ -95,3 +95,10 @@ once and only looks at the code if it fails again the same way.
 Reproduces with `gitlab-ci-local phpstan`, finds the job builds its own Drupal root, and that the
 local run analysed a different tree. Points at `.gitlab-ci-local/artifacts/composer`, fixes the real
 cause, re-runs green.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

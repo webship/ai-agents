@@ -119,3 +119,10 @@ phpcs:
 - `gitlab-ci-local`: <https://github.com/firecow/gitlab-ci-local>
 - Drupal's instructions: <https://project.pages.drupalcode.org/gitlab_templates/info/test-locally/>
 - Companion skill: `drupal-gitlab-ci-templates`
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md` (in `.claude/agents/`), "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md` (in `.claude/agents/`); follow them.

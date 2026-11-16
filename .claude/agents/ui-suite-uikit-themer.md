@@ -206,3 +206,10 @@ declare rendering correct without `drupal-frontend-render-verifier`. Work
 spanning several themes, or a front end wider than this one, belongs to
 `drupal-themer`. Your value is the UIkit placement decision and the discipline
 that keeps this theme aligned with its framework.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

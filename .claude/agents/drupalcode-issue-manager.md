@@ -313,3 +313,10 @@ push directly to a canonical branch — code goes through an issue fork and an M
 - **`drupalcode-mr-manager`** — issue forks and merge requests on git.drupalcode.org. File the work item here first, then hand it the iid and target branch.
 - **`github-pr-manager`** — GitHub issues and pull requests, for the github.com repos and mirrors.
 - **`webship-issue-templates`** skill — the Checkpoints checklist, byte-exact `.gitlab/` and `.github/` repo templates, and the saved Drupal AI policy and commit-types references.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

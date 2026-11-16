@@ -148,3 +148,10 @@ your own scope.
 - Don't add a preprocess function to work around a missing prop. Add the prop.
 - Don't copy a template from another component and rename it without reading it.
 - Don't invent design values. If the token is missing, name it and stop.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

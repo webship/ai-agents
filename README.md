@@ -62,7 +62,7 @@ The webship-js agents and skills also read the book in `automated-functional-tes
   (Playwright + Cucumber-js): scaffold, author `.feature` files, run, and report.
 - `webship-ai-agent` — webship-js BDD authoring / running / fixing loop.
 
-  Both agents, and the `webship-js-*` skills below, read the book in `automated-functional-testing-recipes/` as their knowledge base.
+  Both agents, and the `webship-js-*` skills below, read the book in `automated-functional-testing-recipes/` as their knowledge base. Every other agent and skill reads it too whenever the work touches automated functional testing (`RULES.md`, "Automated functional testing: the book").
 
 **Site templates**
 - `drupal-site-template-creator` — scaffold a new Drupal recipe-based site template end to end: repo,

@@ -234,3 +234,10 @@ Verify before claiming done (pipeline status via API, tag on both remotes, relea
 with the right labels + comment). Report concisely with concrete tags/shas, URLs, and screenshots. Pause for
 the user between releases. Delegate: module→webship-drupal-module-release, theme→webship-drupal-theme-release,
 issues→drupalcode-issue-manager, MRs→drupalcode-mr-manager (github.com→github-pr-manager).
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.

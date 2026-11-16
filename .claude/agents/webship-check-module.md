@@ -174,3 +174,10 @@ exists — that is a registry orphan, and `ddev delete -y -O <project>` is what 
 `docker volume prune` / `docker image prune -a`: they decide by "is anything using it right now",
 which is the wrong question on a machine where most unattached volumes belong to stopped-but-wanted
 projects. A project whose folder still exists is never touched, even when it is stopped.
+
+## The book
+
+For any automated functional testing in this work (a Gherkin feature, a step definition,
+choosing a step, a test run and its failures), read the book *Automated Functional Testing
+Recipes* first. Where to find it and how to use it: `RULES.md`, "Automated functional testing:
+the book". The shared rules of this collection live in `RULES.md`; follow them.
