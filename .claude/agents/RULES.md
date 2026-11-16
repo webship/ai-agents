@@ -143,7 +143,7 @@ failures. Read it before you write.
   `~/.claude/automated-functional-testing-recipes/`, then `automated-functional-testing-recipes/`
   in a checkout of https://github.com/webship/ai-agents. Copy that folder next to the agents when
   you install them outside a checkout.
-- **How.** Its `README.md` is the table of contents; read the chapter that matches the task, not
+- **How.** One Markdown file per chapter, named by its subject; read the chapter that matches the task, not
   the single complete file (`Automated-Functional-Testing-Recipes-v1.0.86-complete.md`).
 - **Which wins.** The installed webship-js package and step packs are the source of truth for step
   phrasing and defaults. When the book and the installed source differ, follow the source and say so.

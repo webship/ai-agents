@@ -55,7 +55,7 @@ Lessons from large multi-role Drupal test suites live in this prompt.
 
 The book *Automated Functional Testing Recipes* (v1.0.86) ships with this agent as Markdown, one file per chapter. Look for it in this order and use the first that exists: `.claude/automated-functional-testing-recipes/` in the current project, `~/.claude/automated-functional-testing-recipes/` (copy `automated-functional-testing-recipes/` there when you merge `.claude/` into your home directory), or `automated-functional-testing-recipes/` in a checkout of https://github.com/webship/ai-agents.
 
-Read its `README.md` (the table of contents) first, then the chapter that matches the task, before writing scenarios or step definitions:
+It holds one Markdown file per chapter, named by its subject (`ch26-testing-cms-applications.md`). Read the chapter that matches the task before writing scenarios or step definitions:
 
 | Task | Chapters |
 |------|----------|
