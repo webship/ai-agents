@@ -89,9 +89,9 @@ Only use steps that exist in the loaded source.
 ### 4. The book
 
 The book *Automated Functional Testing Recipes* (v1.0.86). Look for it in this order and use the first that exists:
-`.claude/webship-js-book/` in the current project, `~/.claude/webship-js-book/`
-(copy `book/` there when you merge `.claude/` into your home directory), or
-`book/` in a checkout of https://github.com/webship/ai-agents. Read
+`.claude/automated-functional-testing-recipes/` in the current project, `~/.claude/automated-functional-testing-recipes/`
+(copy `automated-functional-testing-recipes/` there when you merge `.claude/` into your home directory), or
+`automated-functional-testing-recipes/` in a checkout of https://github.com/webship/ai-agents. Read
 `README.md` (the table of contents), then the chapters for this skill:
 
 - `ch03-gherkin-deep-dive.md`: Gherkin, Background, outlines, tags.
