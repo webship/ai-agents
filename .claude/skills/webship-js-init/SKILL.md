@@ -132,16 +132,16 @@ The book *Automated Functional Testing Recipes* (v1.0.86). Look for it in this o
 
 ```
 <project>/
-├── cucumber.js                 # worldParameters: launchUrl, selectors, screenshot, video, javascript, diffy
+├── cucumber.js                 # worldParameters: launchUrl, minWaitTime, selectors, screenshot
 ├── playwright.config.ts        # browser + viewport (null + --start-maximized for chromium)
 ├── tsconfig.json               # tsx loader
 ├── package.json                # scripts: test, test:chromium/firefox/webkit, test:headed, test:fast, generate-reports
-├── screenshots/                # auto on failure
 ├── videos/                     # when worldParameters.video.mode != 'off'
 └── tests/
     ├── features/check-homepage.feature + README.md
     ├── step-definitions/custom.js + README.md
     ├── selectors/              # JSON selector files (project-wide presets)
+    ├── screenshots/            # auto on failure (prefix failed_)
     └── reports/README.md
 ```
 
