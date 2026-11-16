@@ -66,7 +66,7 @@ https://github.com/webship/webship-js/tree/2.0.x.
    `.claude/automated-functional-testing-recipes/` in the current project, `~/.claude/automated-functional-testing-recipes/`
    (copy `automated-functional-testing-recipes/` there when you merge `.claude/` into your home directory), or
    `automated-functional-testing-recipes/` in a checkout of https://github.com/webship/ai-agents. Read
-   `README.md` (the table of contents), then the chapters for this skill:
+   the chapters for this skill (one file per chapter, named by its subject):
 
    - `ch33-complete-step-definition-reference.md`: every step, by category.
    - `appendix-b-quick-reference.md`: the one-page cheat sheet.

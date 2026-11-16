@@ -137,14 +137,14 @@ real test suite through forms, waits, modals, tables, authentication and API tes
 definitions, the complete step definition reference, web-first assertions, debugging, CI, and patterns
 vs antipatterns.
 
-Its Markdown sources live in [`automated-functional-testing-recipes/`](automated-functional-testing-recipes/): `automated-functional-testing-recipes/README.md` is the table of contents, one file per
+Its Markdown sources live in [`automated-functional-testing-recipes/`](automated-functional-testing-recipes/): `automated-functional-testing-recipes/README.md` says what the folder holds; there is one file per
 chapter and appendix, and the whole book in one file,
 `automated-functional-testing-recipes/Automated-Functional-Testing-Recipes-v1.0.86-complete.md`. The files are copied as published and
 are not edited here.
 
 `agent-webship-js`, `webship-ai-agent` and the `webship-js-init`, `webship-js-create`,
-`webship-js-run`, `webship-js-audit` and `webship-js-steps` skills read the table of contents and then
-the chapter that matches the task before writing scenarios or step definitions. They look for the book
+`webship-js-run`, `webship-js-audit` and `webship-js-steps` skills read
+the chapter that matches the task (one file per chapter, named by its subject) before writing scenarios or step definitions. They look for the book
 in the project's `.claude/automated-functional-testing-recipes/`, then in `~/.claude/automated-functional-testing-recipes/`, then in `automated-functional-testing-recipes/` of a
 checkout of this repository, so copy `automated-functional-testing-recipes/` next to the agents when you install them outside a
 checkout.
