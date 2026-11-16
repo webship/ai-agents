@@ -190,7 +190,7 @@ Paths:
 - `tests/reports/cucumber_report.json` — raw Cucumber output.
 - `tests/reports/cucumber_report.html` — HTML dashboard.
 - `tests/reports/cucumber_report.pdf` — PDF (when requested).
-- `screenshots/` — failure screenshots (prefix `failed_`).
+- `tests/screenshots/` — failure screenshots (prefix `failed_`).
 - `videos/` — per-scenario recordings when `WEBSHIP_VIDEO != off`.
 
 ### 4. Summarize
@@ -214,7 +214,7 @@ Read `tests/reports/cucumber_report.json` and produce:
 - **Feature / Scenario** — "name"
   - **Step**: `When I press "Submit"`
   - **Error**: `the page took too long to respond` (verbatim)
-  - **Screenshot**: `screenshots/failed_<...>.png`
+  - **Screenshot**: `tests/screenshots/failed_<...>.png`
   - **Video**: `videos/<...>.webm` (if recording was on)
   - **Root cause**: AJAX race — click fired but assertion ran before
     DOM update settled

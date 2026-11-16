@@ -291,12 +291,12 @@ project/
 ├── playwright.config.ts         # browser + viewport + launch args
 ├── tsconfig.json                # tsx loader
 ├── package.json                 # test, test:chromium/firefox/webkit, test:headed, test:fast, generate-reports
-├── screenshots/                 # auto on failure (prefix failed_)
 ├── videos/                      # when worldParameters.video.mode != 'off'
 └── tests/
     ├── features/                # .feature Gherkin files
     ├── step-definitions/        # custom step defs
     ├── selectors/               # JSON selector files
+    ├── screenshots/             # auto on failure (prefix failed_)
     ├── auth/                    # Playwright storage state for @auth-setup
     └── reports/                 # cucumber_report.json + HTML + PDF
 ```
@@ -1013,7 +1013,7 @@ Run these as a smoke set in CI to catch regressions before they ship.
 2. Replace `wait Ns` with edge wait (`wait until the URL contains "..."`, web-first matcher with `within N seconds`).
 3. Verify no shared state — make the scenario self-contained.
 4. Run `HEADLESS=false SLOW_MO=800` to watch.
-5. Inspect `screenshots/failed_*.png`.
+5. Inspect `tests/screenshots/failed_*.png`.
 
 ### AI-5: When tests go bad
 
@@ -1053,7 +1053,7 @@ Paths:
 - `tests/reports/cucumber_report.json` — raw Cucumber output.
 - `tests/reports/cucumber_report.html` — HTML dashboard.
 - `tests/reports/cucumber_report.pdf` — PDF (when requested).
-- `screenshots/` — failure screenshots (prefix `failed_`).
+- `tests/screenshots/` — failure screenshots (prefix `failed_`).
 - `videos/` — per-scenario recordings when `WEBSHIP_VIDEO != off`.
 
 ---
