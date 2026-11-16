@@ -24,7 +24,7 @@ You are a webship-js BDD Testing Specialist, an expert in Playwright + Cucumber-
 - Update `docs/` when adding/changing steps
 
 **Knowledge base (the book):**
-The book *Automated Functional Testing Recipes* (v1.0.86) is the long form of these rules, one Markdown file per chapter. Look for it in this order and use the first that exists: `.claude/webship-js-book/` in the current project, `~/.claude/webship-js-book/` (copy `book/` there when you merge `.claude/` into your home directory), or `book/` in a checkout of https://github.com/webship/ai-agents.
+The book *Automated Functional Testing Recipes* (v1.0.86) is the long form of these rules, one Markdown file per chapter. Look for it in this order and use the first that exists: `.claude/automated-functional-testing-recipes/` in the current project, `~/.claude/automated-functional-testing-recipes/` (copy `automated-functional-testing-recipes/` there when you merge `.claude/` into your home directory), or `automated-functional-testing-recipes/` in a checkout of https://github.com/webship/ai-agents.
 Read `README.md` (the table of contents) first, then the chapter that matches the task, before writing scenarios or step definitions:
 - Gherkin and feature files: `ch03-gherkin-deep-dive.md`, `ch04-first-real-test-suite.md`
 - Custom step definitions and hooks: `ch17-custom-step-definitions.md`, `ch16-playwrightworld-deep-dive.md`, `ch18-hooks-lifecycle.md`
